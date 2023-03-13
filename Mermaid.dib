@@ -1,0 +1,48 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":null,"items":[{"name":"csharp","languageName":"C#","aliases":["c#","cs"]},{"name":"fsharp","languageName":"F#","aliases":["f#","fs"]},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":"javascript","languageName":"JavaScript","aliases":["js"]},{"name":"html","languageName":"HTML"},{"name":"sql","languageName":"SQL"},{"name":"kql","languageName":"KQL"},{"name":"mermaid","languageName":"Mermaid"},{"name":"httpRequest","languageName":"http"},{"name":"value"}]}}
+
+#!markdown
+
+# Mermaid
+This notebook focuses on working with Mermaid Diagrams
+
+#!markdown
+
+## Class Diagrams
+
+#!mermaid
+
+classDiagram
+    GameObject <-- Enemy
+    GameObject : +String Name
+    GameObject : +Point Position
+    Enemy : -int HitPoints
+    Enemy : +bool IsDead
+    Enemy: +TakeDamage(int damage)
+    class Point {
+        +int X
+        +int Y
+    }
+
+#!markdown
+
+## Sequence Diagrams
+
+#!mermaid
+
+sequenceDiagram
+    autonumber
+    Client->>+Server: Login (Username, Password)
+    Server->>+Database: Select Hash & Salt for User
+    Database-->>-Server: Hash & Salt
+    Server->>Server: Calculate Hash of Salted Password
+    alt calculated hash matches stored hash
+        Server->>Server: Generate JWT
+        Note right of Database: JWT is not stored
+        Server-->>Client: JSON Web Token (JWT)
+    else Incorrect Username or Password
+        Server-->>Client: 401 Unauthorized
+    end
+    deactivate Server
+    note over Client, Server: Subsequent requests include JWT in Header
