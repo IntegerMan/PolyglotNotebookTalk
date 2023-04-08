@@ -2,7 +2,7 @@
 
 ## Entity Relationship Diagram
 
-See [My article on Mermaid.js ERDs for more details](https://newdevsguide.com/2023/04/08/creating-erds-with-mermaid/)
+See [My article on Mermaid.js ERDs](https://newdevsguide.com/2023/04/08/creating-erds-with-mermaid/) for more details
 
 ``` mermaid
 erDiagram
