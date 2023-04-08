@@ -1,6 +1,6 @@
 #!meta
 
-{"kernelInfo":{"defaultKernelName":null,"items":[{"name":"csharp","languageName":"C#","aliases":["c#","cs"]},{"name":"fsharp","languageName":"F#","aliases":["f#","fs"]},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":"javascript","languageName":"JavaScript","aliases":["js"]},{"name":"html","languageName":"HTML"},{"name":"sql","languageName":"SQL"},{"name":"kql","languageName":"KQL"},{"name":"mermaid","languageName":"Mermaid"},{"name":"httpRequest","languageName":"http"},{"name":"value"}]}}
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":["c#","cs"],"languageName":"C#","name":"csharp"},{"aliases":["f#","fs"],"languageName":"F#","name":"fsharp"},{"aliases":[],"languageName":"HTML","name":"html"},{"aliases":[],"languageName":"http","name":"httpRequest"},{"aliases":["js"],"languageName":"JavaScript","name":"javascript"},{"aliases":[],"languageName":"KQL","name":"kql"},{"aliases":[],"languageName":"Mermaid","name":"mermaid"},{"aliases":["powershell"],"languageName":"PowerShell","name":"pwsh"},{"aliases":[],"languageName":"SQL","name":"sql"},{"aliases":[],"name":"value"}]}}
 
 #!markdown
 
@@ -46,3 +46,214 @@ sequenceDiagram
     end
     deactivate Server
     note over Client, Server: Subsequent requests include JWT in Header
+
+#!markdown
+
+## Flowchart
+
+#!mermaid
+
+flowchart LR
+    G["Local Git Repository"] -->|PyDriller| C["Commits.csv"]
+    C -->|Per-File Commits| FC[FileCommits.csv]
+    G -->|Traverse Directory Tree| FS[FileSizes.csv]
+    FC --> MFC["MergedFileCommits.csv"]
+    FS --> MFC
+    FS --> FD["FileData.csv"]
+    FC --> FD
+    subgraph Analysis Data Sets
+    MFC
+    FD
+    end
+    classDef highlight fill:#f9f
+
+#!mermaid
+
+flowchart LR
+    A["Commit 3-4cd5c84"] --> E["Extraction Script"]
+    E --> B["Main.py"]
+    E --> C["Parser.py"]
+    E --> D["README.md"]
+    B --> FC["FileCommits.csv"]
+    C --> FC["FileCommits.csv"]
+    D --> FC["FileCommits.csv"]
+
+#!markdown
+
+## Git Data
+
+#!mermaid
+
+gitGraph
+    commit
+    commit
+    branch feature
+    checkout feature
+    commit
+    commit
+    commit
+    checkout main
+    commit
+    commit
+    merge feature
+    commit
+    commit
+
+#!markdown
+
+## Entity Relationship Diagram
+
+#!mermaid
+
+erDiagram
+    USER ||--o{ POST : "creates"
+    POST }o--|| FORUM : "belongs to"
+    USER ||--o{ COMMENT : "creates"
+    COMMENT }o--|| POST : "is on"
+    COMMENT o|--|| COMMENT : "is in reply to"
+    USER ||--o{ FORUM : "created"
+
+#!mermaid
+
+erDiagram
+    CITY }|--|| STATE : "Belongs to"
+    CITY ||--o| STATE : "Is capital of"
+    CITY {
+        int city_id PK
+        string name
+        string state_abbreviation FK
+    }
+    STATE {
+        string state_abbreviation PK
+        string name
+    }
+
+#!markdown
+
+## Timeline (Not Yet Supported)
+
+#!mermaid
+
+timeline
+    section .NET Framework
+        Jan 15 2002 : .NET Framework 1.0
+        Mar 19 2002 : .NET Framework 1.0 SP1
+        Aug 07 2002 : .NET Framework 1.0 SP2
+        Apr 09 2003 : .NET Framework 1.1
+        Aug 30 2004 : .NET Framework 1.0 SP3
+        Oct 27 2005 : .NET Framework 2.0
+        Nov 06 2006 : .NET Framework 3.0
+        Nov 19 2007 : .NET Framework 3.5 
+                    : .NET Framework 2.0 SP 1 
+                    : .NET Framework 3.0 SP 1 
+        Aug 11 2008 : .NET Framework 2.0 SP 2 
+                    : .NET Framework 3.0 SP 2 
+                    : .NET Framework 3.5 SP 1
+        Apr 12 2010 : .NET Framework 4.0
+        Aug 15 2012 : .NET Framework 4.5
+        Oct 17 2013 : .NET Framework 4.5.1
+        May 05 2014 : .NET Framework 4.5.2
+        Jul 20 2015 : .NET Framework 4.6
+        Nov 30 2015 : .NET Framework 4.6.1
+        Aug 02 2016 : .NET Framework 4.6.2
+        Apr 05 2017 : .NET Framework 4.7
+        Oct 17 2017 : .NET Framework 4.7.1
+        Apr 30 2018 : .NET Framework 4.7.2
+        Apr 18 2019 : .NET Framework 4.8
+        Aug 09 2022 : .NET Framework 4.8.1
+    section .NET Core
+        Jun 27 2016 : .NET Core 1.0
+        Nov 16 2016 : .NET Core 1.1
+        Aug 14 2017 : .NET Core 2.0
+        May 30 2018 : .NET Core 2.1
+        Dec 04 2018 : .NET Core 2.2
+        Sep 23 2019 : .NET Core 3.0
+        Dec 03 2019 : .NET Core 3.1
+    section Modern .NET
+        Nov 01 2020 : .NET 5
+        Nov 08 2021 : .NET 6
+        Nov 08 2022 : .NET 7
+
+#!markdown
+
+## Gantt Chart
+
+#!mermaid
+
+gantt
+    title Preparing Polyglot Notebooks Talk for Stir Trek 2023
+    dateFormat YYYY-MM-DD
+    section Proposal and Evaluation
+        Submit Abstract :done, submit, 2023-01-15, 2023-02-18
+        Session Evaluation :done, eval, after submit, 2023-03-05
+        Talk Accepted :milestone,done, accepted, after eval, 1d
+    section Talk Preparation
+        Research & Outlining :done,crit research, after accepted, 9d
+        Create Mermaid Examples :active, mermaid, 2023-03-12, 2023-04-08
+        Write Mermaid Articles :after mermaid, 7d
+        Write Jupyter Articles : 2023-04-15, 2d
+        Deep Dive into Polyglot :crit, 2023-04-08, 2w
+        Write Polyglot Articles : 2023-04-22, 7d
+    section Delivery
+        Final Notebook Arrangement :crit, 2023-04-22, 7d
+        Rehearsal :crit, 2023-04-29, 2023-05-04
+        Stir Trek 2023 :milestone,crit, 2023-05-05, 1d
+
+#!markdown
+
+## State Diagram / Finite State Machines (FSM)
+
+#!mermaid
+
+stateDiagram-v2
+    [*] --> Patroling
+    Patroling --> Searching : I think I saw something...
+    Searching --> Attacking : Enemy located
+    Searching --> Patroling : Must be nothing
+    Attacking --> Searching : Where did they go?
+    Attacking --> Patroling : Enemy defeated
+    Patroling --> Dead
+    Searching --> Dead
+    Attacking --> Dead
+
+#!markdown
+
+## Pie Chart
+
+#!mermaid
+
+pie title Leading Causes of Developer Tears
+    "JavaScript": 42
+    "DNS": 8
+    "Leaving a VM on": 15
+
+#!markdown
+
+## User Journey
+
+#!mermaid
+
+journey
+    title Using Polyglot Notebooks
+    section Setup
+        Install Polyglot Notebooks : 5: Me
+        Install NuGet Packages : 2 : Me
+    section Usage
+        %% # is not allowed
+        Write CSharp in a Notebook : 5 : Me, dotnet
+        Write FSharp in a Notebook : 5 : Me, dotnet
+        Share Variables in a Notebook : 3 : Me
+        Use Mermaid Diagrams : 4 : Me, Mermaid.js
+        Troubleshoot Mermaid Issues : 1 : Me, Mermaid.js
+
+#!markdown
+
+## Mindmap
+
+#!markdown
+
+## Requirement Diagram
+
+#!markdown
+
+## Context Diagram
