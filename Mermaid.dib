@@ -14,16 +14,23 @@ This notebook focuses on working with Mermaid Diagrams
 #!mermaid
 
 classDiagram
-    GameObject <-- Enemy
+    GameObject <-- DamageableObject
     GameObject : +String Name
     GameObject : +Point Position
-    Enemy : -int HitPoints
-    Enemy : +bool IsDead
-    Enemy: +TakeDamage(int damage)
-    class Point {
-        +int X
-        +int Y
-    }
+    GameObject <-- SpecialEffect
+    SpecialEffect: -double Intensity
+    SpecialEffect: +PlayEffect()
+    DamageableObject : -int HitPoints
+    DamageableObject : +bool IsDead
+    DamageableObject: +TakeDamage(int damage)
+    DamageableObject <-- Player
+    DamageableObject <-- Monster
+    Player: -int Score
+    Player: -int LivesLeft
+    Player: +RewardForKill(Monster)
+    Monster: -int PointValue
+    Monster: -int ThreatLevel
+    Monster: +Kill()
 
 #!markdown
 
@@ -110,14 +117,16 @@ erDiagram
     POST }o--|| FORUM : "belongs to"
     USER ||--o{ COMMENT : "creates"
     COMMENT }o--|| POST : "is on"
-    COMMENT o|--|| COMMENT : "is in reply to"
+    %% COMMENT o|--|| COMMENT : "is in reply to"
     USER ||--o{ FORUM : "created"
 
 #!mermaid
 
 erDiagram
-    CITY }|--|| STATE : "Belongs to"
+    COUNTRY ||--|{ STATE : "Has"
+    STATE ||--|{ CITY : "Has"
     CITY ||--o| STATE : "Is capital of"
+    CITY ||--o| COUNTRY : "Is capital of"
     CITY {
         int city_id PK
         string name
@@ -125,6 +134,11 @@ erDiagram
     }
     STATE {
         string state_abbreviation PK
+        string name
+        int country_id FK
+    }
+    COUNTRY {
+        int country_id PK
         string name
     }
 
@@ -248,12 +262,97 @@ journey
 
 #!markdown
 
-## Mindmap
+## Mindmap (Not Yet Supported)
+
+#!mermaid
+
+mindmap
+    Talk
+        Notebooks
+            What
+            Why
+            How
+        Jupyter Notebooks
+            IDEs
+                VS Code
+                DataSpell
+                Web Browser
+            Anaconda
+        Polyglot Notebooks
+            Installation
+            Languages
+                CSharp
+                FSharp
+                JS
+                CSS
+                SQL
+                KQL
+                Mermaid
+                    Class Diagram
+                    Gantt
+                    Timeline
+                    User Experience Journey
+                    Pie Chart
+                    ERD
+                    Mindmaps
+                    Requirements
+            Variable Sharing
+        Next Steps
 
 #!markdown
 
 ## Requirement Diagram
 
+#!mermaid
+
+requirementDiagram
+
+designConstraint dark_theme {
+    id: 1
+    text: Dark Themes Rule!
+    risk: low
+    verifymethod: inspection
+}
+
+element revised_skin {
+    type: css,
+    docRef: theme.css
+}
+
+revised_skin - satisfies -> dark_theme
+
 #!markdown
 
 ## Context Diagram
+
+#!mermaid
+
+C4Context
+title GitStractor Context Diagram
+
+UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")
+
+Enterprise_Boundary(bMain, "GitStractor") {
+    ContainerDb(cGit, "Git Repository", "git", "A locally-cloned git repository")
+
+    Component(cGitStractor, "GitStractor Class Library", "C# Class Library", "Core library used for pulling data out of git repositories")
+
+    Container_Boundary(bUI, "User Interface") {
+        UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
+        Container(cWPF, "GitStractor Desktop Edition", "Dotnet and C#", "Stand-Alone Utility for pulling and visualizing data")
+        Container(cJupyter, "GitStractor Juypter Edition", "Jupyter Notebook", "Uses Python, Plotly, and Pandas to visualize data")
+        Container(cBI, "Power BI Template", "Power BI", "Visualize Data with Dedicated Tooling")
+    }
+
+    Container(cExe, "GitStract.exe", "Dotnet and C#", "Pulls Git Information into data files")
+
+    ContainerDb(cData, "Data Files", "CSV Files", "Stores information on commits and files")
+}
+
+Rel(cGitStractor, cGit, "Analyzes")
+Rel(cGitStractor, cData, "Creates")
+Rel(cExe, cGitStractor, "Uses")
+Rel(cWPF, cGitStractor, "Uses")
+Rel(cData, cWPF, "Used by")
+Rel(cData, cJupyter, "Used by")
+Rel(cData, cBI, "Used by")
