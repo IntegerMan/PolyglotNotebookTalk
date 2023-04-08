@@ -110,6 +110,8 @@ gitGraph
 
 ## Entity Relationship Diagram
 
+See [My Article on Entity Relationship Diagrams in Mermaid.js](https://newdevsguide.com/2023/04/08/creating-erds-with-mermaid/) for more information on ERDs.
+
 #!mermaid
 
 erDiagram
@@ -123,10 +125,43 @@ erDiagram
 #!mermaid
 
 erDiagram
+    CITY
+    STATE
+    COUNTRY
+
+#!mermaid
+
+erDiagram
     COUNTRY ||--|{ STATE : "Has"
     STATE ||--|{ CITY : "Has"
     CITY ||--o| STATE : "Is capital of"
     CITY ||--o| COUNTRY : "Is capital of"
+
+#!mermaid
+
+erDiagram
+    CITY {
+        int city_id
+        string name
+        string state_abbreviation
+    }
+    STATE {
+        string state_abbreviation
+        string name
+        int country_id
+    }
+    COUNTRY {
+        int country_id
+        string name
+    }
+    COUNTRY ||--|{ STATE : "Has"
+    STATE ||--|{ CITY : "Has"
+    CITY ||--o| STATE : "Is capital of"
+    CITY ||--o| COUNTRY : "Is capital of"
+
+#!mermaid
+
+erDiagram
     CITY {
         int city_id PK
         string name
@@ -141,6 +176,10 @@ erDiagram
         int country_id PK
         string name
     }
+    COUNTRY ||--|{ STATE : "Has"
+    STATE ||--|{ CITY : "Has"
+    CITY ||--o| STATE : "Is capital of"
+    CITY ||--o| COUNTRY : "Is capital of"
 
 #!markdown
 
