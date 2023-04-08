@@ -2,6 +2,8 @@
 
 ## Entity Relationship Diagram
 
+See [My article on Mermaid.js ERDs for more details](https://newdevsguide.com/2023/04/08/creating-erds-with-mermaid/)
+
 ``` mermaid
 erDiagram
     CITY {
