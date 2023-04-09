@@ -14,6 +14,67 @@ This notebook focuses on working with Mermaid Diagrams
 #!mermaid
 
 classDiagram
+    class GameObject {
+        +String Name
+        +int PosX
+        +int PosY
+        +Despawn() void
+    }
+
+#!mermaid
+
+classDiagram
+    class GameObject {
+        +String Name
+        +int PosX
+        +int PosY
+        +Despawn() void
+    }
+    class DamageableObject {
+        <<abstract>>
+        +int MaxHealth
+        -int Health
+        +IsDead() bool
+        +TakeDamage(int damage) void
+        +OnKilled()* void
+    }
+    GameObject <|-- DamageableObject
+
+#!mermaid
+
+classDiagram
+    class GameObject {
+        +String Name
+        +int PosX
+        +int PosY
+        +Despawn() void
+    }
+    class DamageableObject {
+        <<abstract>>
+        +int MaxHealth
+        -int Health
+        +IsDead() bool
+        +TakeDamage(int damage) void
+        +OnKilled()* void
+    }
+    class Player {
+        -int Score
+        -int LivesRemaining
+        +OnKilled() void
+    }
+    class Monster {
+        -int ThreatLevel
+        -Color Color
+        +MakeNoise() string
+        +OnKilled() void
+    }
+    GameObject <|-- DamageableObject
+    DamageableObject <|-- Player
+    DamageableObject <|-- Monster
+
+#!mermaid
+
+classDiagram
     GameObject <-- DamageableObject
     GameObject : +String Name
     GameObject : +Point Position
