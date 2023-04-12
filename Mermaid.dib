@@ -11,23 +11,72 @@ This notebook focuses on working with Mermaid Diagrams
 
 ## Class Diagrams
 
+See [my article on class diagrams](https://newdevsguide.com/2023/04/08/mermaid-class-diagrams/) for additional context & information
+
 #!mermaid
 
 classDiagram
     class GameObject {
-        +String Name
-        +int PosX
-        +int PosY
+        -String Name
+        -int PosX
+        -int PosY
         +Despawn() void
     }
 
 #!mermaid
 
 classDiagram
+    class GameObject
+    GameObject : -String Name
+    GameObject : -int PosX
+    GameObject : -int PosY
+    GameObject : +Despawn() void
+
+#!mermaid
+
+classDiagram
     class GameObject {
-        +String Name
-        +int PosX
-        +int PosY
+        -String Name
+        -int PosX
+        -int PosY
+        +Despawn() void
+    }
+    class DamageableObject {
+        +int MaxHealth
+        -int Health
+        +IsDead() bool
+        +TakeDamage(int damage) void
+        +OnKilled() void
+    }
+    GameObject <|-- DamageableObject
+
+#!mermaid
+
+classDiagram
+    Human *-- Cells : Is Composed of
+    Salesperson o-- Sales : Makes
+
+#!mermaid
+
+classDiagram
+    Human *-- Cells : composed of
+    Salesperson o-- Sales : makes
+    Human <|-- Salesperson : is
+
+#!mermaid
+
+classDiagram
+    Human "1" *-- "*" Cells : composed of
+    Salesperson "1" o-- "0..*" Sales : makes
+    Human <|-- Salesperson : is
+
+#!mermaid
+
+classDiagram
+    class GameObject {
+        -String Name
+        -int PosX
+        -int PosY
         +Despawn() void
     }
     class DamageableObject {
@@ -65,12 +114,64 @@ classDiagram
     class Monster {
         -int ThreatLevel
         -Color Color
-        +MakeNoise() string
+        +MakeNoise(double decibelLevel) string
         +OnKilled() void
     }
     GameObject <|-- DamageableObject
     DamageableObject <|-- Player
     DamageableObject <|-- Monster
+
+#!mermaid
+
+classDiagram
+    %% note "This is a note for the whole diagram"
+    %% note for Player "This is a note on a specific class"
+    class GameObject {
+        +String Name
+        +int PosX
+        +int PosY
+        +Despawn() void
+    }
+    class DamageableObject {
+        <<abstract>>
+        +int MaxHealth
+        -int Health
+        +IsDead() bool
+        +TakeDamage(int damage) void
+        +OnKilled()* void
+    }
+    class Player {
+        -int Score
+        -int LivesRemaining
+        +OnKilled() void
+    }
+    class Monster {
+        -int ThreatLevel
+        -Color Color
+        +MakeNoise(double decibelLevel) string
+        +OnKilled() void
+    }
+    GameObject <|-- DamageableObject
+    DamageableObject <|-- Player
+    DamageableObject <|-- Monster
+
+#!mermaid
+
+classDiagram
+    class Queue~T~ {
+        -IEnumerable~T~ items
+        +Enqueue(T item) void
+        +Dequeue() T
+        +HasItems() bool
+    }
+
+#!mermaid
+
+classDiagram
+    class ColorManager {
+        -Dictionary~string_Color~ hexColors$
+        +BuildColorFromHex(string hexCode)$ Color
+    }
 
 #!mermaid
 
@@ -96,6 +197,153 @@ classDiagram
 #!markdown
 
 ## Sequence Diagrams
+
+#!mermaid
+
+sequenceDiagram
+    Client->>Server: Login (Username, Password)
+    Server-->>Client: 200 OK & JWT
+
+#!mermaid
+
+sequenceDiagram
+    Client->>Server: Login (Username, Password)
+    Server->>Database: Select User Info
+    Database-->>Server: Salt & Hash
+    Server-->>Client: 200 OK & JWT
+
+#!mermaid
+
+sequenceDiagram
+    participant C as Client
+    participant DB as Database
+    participant S as Server
+    C->>S: Login (Username, Password)
+    S->>DB: Select User Info
+    DB-->>S: Salt & Hash
+    S-->>C: 200 OK & JWT
+
+#!mermaid
+
+sequenceDiagram
+    actor C as Client
+    participant S as Server
+    participant DB as Database
+    C->>S: Login (Username, Password)
+    S->>DB: Select User Info
+    DB-->>S: Salt & Hash
+    S-->>C: 200 OK & JWT
+
+#!mermaid
+
+sequenceDiagram
+    actor C as Client
+    participant S as Server
+    participant DB as Database
+    C->>S: Login (Username, Password)
+    S->>DB: Select User Info
+    note over DB: Password is not stored in database
+    DB-->>S: Salt & Hash
+    S-->>C: 200 OK & JWT
+    note over C, S: Subsequent requests include JWT
+
+#!mermaid
+
+sequenceDiagram
+    autonumber
+    actor C as Client
+    participant S as Server
+    participant DB as Database
+    C->>S: Login (Username, Password)
+    S->>DB: Select User Info
+    note over DB: Password is not stored in database
+    DB-->>S: Salt & Hash
+    S-->>C: 200 OK & JWT
+    note over C, S: Subsequent requests include JWT
+
+#!mermaid
+
+sequenceDiagram
+    autonumber
+    actor C as Client
+    participant S as Server
+    participant DB as Database
+    C->>S: Login (Username, Password)
+    S->>DB: Select User Info
+    note over DB: Password is not stored in database
+    DB-->>S: Salt & Hash
+    S->>S: Check Computed Hash using Salt
+    S->>S: Generate JWT
+    S-->>C: 200 OK & JWT
+    note over C, S: Subsequent requests include JWT
+
+#!mermaid
+
+sequenceDiagram
+    autonumber
+    actor C as Client
+    participant S as Server
+    participant DB as Database
+    C->>S: Login (Username, Password)
+    S->>DB: Select User Info
+    note over DB: Password is not stored in database
+    DB-->>S: Salt & Hash
+    S->>S: Check Computed Hash using Salt
+    alt Computed Hash Matches
+        S->>S: Generate JWT
+        S-->>C: 200 OK & JWT
+    else No user or wrong password
+        S-->>C: 401 Unauthorized
+    end
+    note over C, S: Subsequent requests include JWT
+
+#!mermaid
+
+sequenceDiagram
+    autonumber
+    actor C as Client
+    participant S as Server
+    participant DB as Database
+    C->>S: Login (Username, Password)
+    activate S
+        S->>DB: Select User Info
+        
+        activate DB
+            note over DB: Password is not stored in database
+            DB-->>S: Salt & Hash
+        deactivate DB
+
+        S->>S: Check Computed Hash using Salt
+        alt Computed Hash Matches
+            S->>S: Generate JWT
+            S-->>C: 200 OK & JWT
+        else No user or wrong password
+            S-->>C: 401 Unauthorized
+        end
+    deactivate S
+    note over C, S: Subsequent requests include JWT
+
+#!mermaid
+
+sequenceDiagram
+    autonumber
+    actor C as Client
+    participant S as Server
+    participant DB as Database
+    C->>+S: Login (Username, Password)
+        S->>+DB: Select User Info
+            note over DB: Password is not stored in database
+        DB-->>-S: Salt & Hash
+
+        S->>S: Check Computed Hash using Salt
+        alt Computed Hash Matches
+            S->>S: Generate JWT
+            S-->>C: 200 OK & JWT
+        else No user or wrong password
+            S-->>C: 401 Unauthorized
+        end
+        note over C, S: Subsequent requests include JWT
+    deactivate S
 
 #!mermaid
 
