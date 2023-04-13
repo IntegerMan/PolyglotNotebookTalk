@@ -403,6 +403,119 @@ flowchart LR
 gitGraph
     commit
     commit
+    commit
+
+#!mermaid
+
+%%{init: { 'theme': 'base' } }%%
+gitGraph
+    commit
+    commit id: "Fixed Issue #42"
+    commit
+
+#!mermaid
+
+%%{init: { 'theme': 'base' } }%%
+gitGraph
+    commit
+    commit
+    branch feature
+    commit
+
+#!mermaid
+
+%%{init: { 'theme': 'base' } }%%
+gitGraph
+    commit
+    commit
+    branch feature
+    commit id: "Dark Theme"
+    checkout main
+    merge feature
+    commit
+
+#!mermaid
+
+%%{init: { 'theme': 'base' } }%%
+gitGraph
+    commit
+    branch feature
+    checkout main
+    commit
+    branch bugfix
+    commit
+    checkout feature
+    commit id: "Dark Theme"
+    checkout main
+    merge feature
+    commit
+    checkout bugfix
+    commit id: "Fixed Null Ref"
+    checkout main
+    merge bugfix
+    commit
+
+#!mermaid
+
+%%{init: { 'theme': 'base' } }%%
+gitGraph
+    commit tag: "v0.4.0"
+    branch feature
+    checkout main
+    commit
+    branch bugfix
+    commit
+    checkout feature
+    commit id: "Dark Theme"
+    checkout main
+    merge feature
+    commit tag: "v0.4.1"
+    commit
+    checkout bugfix
+    commit id: "Fixed Null Ref"
+    checkout main
+    merge bugfix tag: "v0.4.2"
+    commit
+
+#!mermaid
+
+%%{init: { 'theme': 'base' } }%%
+gitGraph
+    commit tag: "v0.4.0"
+    branch feature
+    checkout main
+    commit
+    branch bugfix
+    commit id: "Whoopsies" type: REVERSE
+    checkout feature
+    commit id: "Dark Theme"
+    checkout main
+    merge feature
+    commit tag: "v0.4.1"
+    commit type: HIGHLIGHT
+    checkout bugfix
+    commit id: "Fixed Null Ref"
+    checkout main
+    merge bugfix tag: "v0.4.2"
+
+#!mermaid
+
+%%{init: { 'theme': 'base' } }%%
+gitGraph
+    commit
+    commit
+    branch feature
+    commit
+    checkout main
+    commit
+    merge feature
+    commit
+
+#!mermaid
+
+gitGraph
+    commit
+    commit
     branch feature
     checkout feature
     commit
@@ -600,6 +713,64 @@ pie title Leading Causes of Developer Tears
 #!markdown
 
 ## User Journey
+
+#!mermaid
+
+journey
+    title Attend a Tech Conference
+    Buy a Ticket: 4
+    Check Schedule before Conference: 6
+    Check in at Conference: 5
+    Check Schedule at Conference: 4
+    Attend Talk: 5
+    Lunch: 3
+    "Hallway Track": 5
+    Post-Conference Movie: 7
+
+#!mermaid
+
+journey
+    title Attend a Tech Conference
+    Buy a Ticket: 4: Attendees, Point of Sales
+    Check Schedule before Conference: 6: Attendees, Web Site
+    Check in at Conference: 5: Attendees, Volunteers
+    Check Schedule at Conference: 4: Attendees, Mobile App    
+    Attend Talk: 5: Attendees, Speakers, Volunteers
+    Lunch: 3: Attendees, Volunteers
+    "Hallway Track": 5: Attendees, Volunteers
+    Post-Conference Movie: 7: Attendees, Volunteers, Speakers
+
+#!mermaid
+
+journey
+    title Attend a Tech Conference
+    section Pre-Conference
+        Buy a Ticket: 4
+        Check Schedule before Conference: 6
+    section Morning
+        Check in at Conference: 5
+        Check Schedule at Conference: 4
+        Attend Talk: 5
+    section Afternoon
+        Lunch: 3
+        "Hallway Track": 5
+        Post-Conference Movie: 7
+
+#!mermaid
+
+journey
+    title Attend a Tech Conference
+    section Pre-Conference
+        Buy a Ticket: 4: Attendees, Point of Sales
+        Check Schedule before Conference: 6: Attendees, Web Site
+    section Morning
+        Check in at Conference: 5: Attendees, Volunteers
+        Check Schedule at Conference: 4: Attendees, Mobile App    
+        Attend Talk: 5: Attendees, Speakers, Volunteers
+    section Afternoon
+        Lunch: 3: Attendees, Volunteers
+        "Hallway Track": 5: Attendees, Volunteers
+        Post-Conference Movie: 7: Attendees, Volunteers, Speakers
 
 #!mermaid
 
