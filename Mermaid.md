@@ -25,3 +25,39 @@ erDiagram
     CITY ||--o| STATE : "Is capital of"
     CITY ||--o| COUNTRY : "Is capital of"
 ```
+
+
+```mermaid
+mindmap
+    Talk
+        Notebooks
+            What
+            Why
+            How
+        Jupyter Notebooks
+            IDEs
+                VS Code
+                DataSpell
+                Web Browser
+            Anaconda
+        Polyglot Notebooks
+            Installation
+            Languages
+                CSharp
+                FSharp
+                JS
+                CSS
+                SQL
+                KQL
+                Mermaid
+                    Class Diagram
+                    Gantt
+                    Timeline
+                    User Experience Journey
+                    Pie Chart
+                    ERD
+                    Mindmaps
+                    Requirements
+            Variable Sharing
+        Next Steps
+```
