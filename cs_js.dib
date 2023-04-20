@@ -1,0 +1,47 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!javascript
+
+let jsVar = 42
+jsVar
+
+#!csharp
+
+public class Point
+{
+    public int X {get; set;}
+    public int Y {get; set;}
+
+    public override string ToString() => $"Point ({X}, {Y})";
+}
+
+#!csharp
+
+Point p = new() { X = 4, Y = 2};
+p
+
+#!javascript
+
+#!set --value @csharp:p --name p
+
+console.log('X marks the spot. The spot is ' + p.X)
+
+#!javascript
+
+let author = { firstName: 'Matt', lastName: 'Eland', isNerdy: true};
+console.log(author)
+author
+
+#!csharp
+
+#!share --from javascript author --as csAuthor
+
+csAuthor
+
+#!csharp
+
+#!share --from javascript jsVar --as csVar
+
+csVar
