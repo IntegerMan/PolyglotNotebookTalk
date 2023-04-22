@@ -4,8 +4,18 @@
 
 #!javascript
 
-let jsVar = 42
-jsVar
+let jsVar = 42;
+return jsVar;
+
+#!javascript
+
+console.log(jsVar);
+
+#!csharp
+
+#!share --from javascript jsVar --as csVar
+
+csVar
 
 #!csharp
 
@@ -39,9 +49,3 @@ author
 #!share --from javascript author --as csAuthor
 
 csAuthor
-
-#!csharp
-
-#!share --from javascript jsVar --as csVar
-
-csVar

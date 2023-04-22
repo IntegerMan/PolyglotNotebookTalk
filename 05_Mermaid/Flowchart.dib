@@ -1,0 +1,123 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Flowcharts
+
+#!mermaid
+
+flowchart
+    Client
+    Server
+    Database
+
+#!mermaid
+
+flowchart
+    Client --> Server
+    Server --> Database
+
+#!mermaid
+
+flowchart LR
+    Client --> Server
+    Server --> Database
+
+#!markdown
+
+### Relationships
+
+#!mermaid
+
+flowchart LR
+    Client --> Server
+    Server --> Database
+    Database -.-> Server
+    Server -.-> Client
+
+#!mermaid
+
+flowchart LR
+    Base --> Arrow
+    Base ==> Heavy
+    Base -.-> Dotted
+    Base --- Line
+    Base --> You --> Can --> Chain --> Relations --> On --> One --- Line
+
+#!mermaid
+
+flowchart LR
+    c[Client]
+    s[Server]
+    db[Database]
+    
+    c -- HTTP GET --> s
+    s -- SQL Query --> db
+    db -. Result Set .-> s
+    s -. JSON .-> c
+
+#!markdown
+
+### Shapes
+
+#!mermaid
+
+flowchart
+    a[Default]
+    b([Rounded])
+    c[(Database)]
+    d[[Subroutine]]
+    e((Circle))
+    f>Note]
+    g{Decision}
+    h{{Hexagon}}
+    i[/Parallelogram/]
+    j(((Double Circle)))
+
+#!markdown
+
+### Subgraphs
+
+#!mermaid
+
+flowchart LR
+    subgraph Azure
+        s[Server]
+        db[(Database)]
+    end
+    subgraph Netlify
+        c[Client]
+    end
+
+    c -- HTTP GET --> s
+    s -. JSON .-> c    
+    db -. Result Set .-> s
+    s -- SQL Query --> db
+
+#!markdown
+
+### Icons
+
+#!mermaid
+
+flowchart LR
+    subgraph Azure
+        s[fa:fa-code Server]
+        db[(fa:fa-table Database)]
+    end
+    subgraph Netlify
+        c[fa:fa-user Client]
+    end
+
+    subgraph Netlify
+    end
+    subgraph Azure
+        direction LR
+    end
+    
+    c -- HTTP GET --> s
+    s -- SQL Query --> db
+    db -. Result Set .-> s
+    s -. JSON .-> c

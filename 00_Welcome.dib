@@ -1,0 +1,149 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+# Interactive Notebooks for the Polyglot with Python, .NET, SQL, JS, and more!
+By [Matt Eland](https://MattEland.dev) ([@IntegerMan](https://Twitter.com/IntegerMan))
+
+Instructor at [Tech Elevator](https://TechElevator.com) & [Microsoft MVP](https://mvp.microsoft.com/en-us/PublicProfile/5005207?fullName=Matt%20Eland) in AI
+
+![Matt Eland | @IntegerMan | Microsoft MVP](Images/Matt.png)
+
+#!markdown
+
+## Talk Resources
+
+**Code for this talk available at [https://GitHub.com/IntegerMan/PolyglotNotebookTalk](https://GitHub.com/IntegerMan/PolyglotNotebookTalk)**
+
+**TODO:** QR Code for link
+
+#!markdown
+
+## Abstract
+Have you ever wanted to run a small experiment or create an example to share with your team but didn't want to go through the boilerplate of setting up a new project? Did you ever wish you could embed interactive code examples alongside your documentation? **Project Jupyter** and **Polyglot Notebooks** might be up your alley. 
+
+In this talk you'll see how **Jupyter Notebooks**, **Jupyter Labs**, and **Polyglot Notebooks** (formerly .NET Interactive) offer interactive ways of running code in a minimal environment alongside rich markup documentation. We'll cover what notebooks are, what they're used for, setting up your notebook in Jupyter and Polyglot Notebooks, and how the various code blocks can be used. 
+
+Along the way we'll feature examples using **Python**, **JavaScript**, **C#**, **F#**, **SQL**, **HTML**, **Mermaid diagrams**, and more. 
+
+Finally, we'll close with a discussion of sharing your notebooks with others and how notebooks can serve as *rich interactive documentation*, *proofs of concept*, and might even be considered an *entire class of application* in their own right.
+
+#!markdown
+
+## Goals
+
+#!mermaid
+
+flowchart LR
+    what[What are Notebooks?] --> why[Why are Notebooks?] --> can[What can Notebooks?] --> how[How do Notebooks?]
+
+#!markdown
+
+## Outline
+
+#!mermaid
+
+mindmap
+    This Talk
+    ::icon(fa fa-person-chalkboard)
+        {{What are Notebooks?}}
+        ::icon(fa fa-book)
+            Cells
+            ::icon(fa fa-table-cells-large)
+                Code
+                ::icon(fa fa-code)
+                Markdown
+                ::icon(fab fa-markdown)
+                Variable Storage
+                ::icon(fa fa-box)
+            What is a Kernel?
+            ::icon(fa fa-microchip)
+            Jupyter Notebooks
+            ::icon(fa fa-rocket)
+                Python
+                ::icon(fab fa-python)
+                R
+                ::icon(fa fa-r)
+                Julia
+                ::icon(fa fa-j)
+            IDEs
+            ::icon(fa fa-laptop-code)
+                VS Code
+                PyCharm
+                DataSpell
+                Web Browser
+                Azure Portal
+                CodeSpaces
+            Polyglot Notebooks
+            ::icon(fa fa-arrows-spin)
+                C#
+                ::icon(fa fa-hashtag)
+                F#
+                ::icon(fa fa-f)
+                PowerShell
+                ::icon(fa fa-terminal)
+                JavaScript
+                ::icon(fab fa-node-js)
+                SQL
+                ::icon(fa fa-database)
+                Kusto Query Language
+                ::icon(fa fa-k)
+                HTML
+                ::icon(fab fa-html5)
+                Mermaid
+                ::icon(fa fa-diagram-project)
+                    Flowchart
+                    Sequence Diagram
+                    Class Diagram
+                    State Diagram
+                    Entity Relationship Diagram
+                    User Journey
+                    Gantt Chart
+                    Pie Chart
+                    Requirement Diagram
+                    Git Graph
+                    Coming Soon
+                        Mind Maps
+                        Timelines
+                        C4C Diagrams
+            Formats
+            ::icon(fa fa-file-code)
+                ipynb
+                dib
+        {{Why are Notebooks?}}
+        ::icon(fa fa-question)
+            Documentation + Code
+            Interactive Visualizations
+            Accomplish Tasks
+            Can use Cloud Compute
+        {{What can Notebooks?}}
+        ::icon(fa fa-book-journal-whills)
+            Data Visualization
+            Exploratory Data Analysis
+            Data Transformation
+            Machine Learning
+            Teaching / Training
+            Documentation
+            Prototyping / Testing
+        {{How do Notebooks?}}
+        ::icon(fa fa-circle-info)
+            Installing
+                Python 3.8+
+                Anaconda
+                .NET SDK
+                VS Code
+                Polyglot Notebooks
+            Cell Results
+            Restarting the Kernel
+            Importing
+                Python Packages
+                Python Code
+                NuGet Packages
+            Deploying / Hosting
+                Jupyter Notebooks
+                Jupyter Labs
+                Polyglot Notebooks
+                Azure Notebooks
+                GitHub Notebooks

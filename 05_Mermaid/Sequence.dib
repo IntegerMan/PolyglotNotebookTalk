@@ -1,0 +1,182 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Sequence Diagrams
+
+#!mermaid
+
+sequenceDiagram
+    Client->>Server: Login (Username, Password)
+    Server-->>Client: 200 OK & JWT
+
+#!mermaid
+
+sequenceDiagram
+    Client->>Server: Login (Username, Password)
+    Server->>Database: Select User Info
+    Database-->>Server: Salt & Hash
+    Server-->>Client: 200 OK & JWT
+
+#!markdown
+
+### Object Ordering and Aliases
+
+#!mermaid
+
+sequenceDiagram
+    participant C as Client
+    participant DB as Database
+    participant S as Server
+    C->>S: Login (Username, Password)
+    S->>DB: Select User Info
+    DB-->>S: Salt & Hash
+    S-->>C: 200 OK & JWT
+
+#!markdown
+
+### Actors
+
+#!mermaid
+
+sequenceDiagram
+    actor C as Client
+    participant S as Server
+    participant DB as Database
+    C->>S: Login (Username, Password)
+    S->>DB: Select User Info
+    DB-->>S: Salt & Hash
+    S-->>C: 200 OK & JWT
+
+#!markdown
+
+### Notes
+
+#!mermaid
+
+sequenceDiagram
+    actor C as Client
+    participant S as Server
+    participant DB as Database
+    C->>S: Login (Username, Password)
+    S->>DB: Select User Info
+    note over DB: Password is not stored in database
+    DB-->>S: Salt & Hash
+    S-->>C: 200 OK & JWT
+    note over C, S: Subsequent requests include JWT
+
+#!markdown
+
+### Sequence Numbers
+
+#!mermaid
+
+sequenceDiagram
+    autonumber
+    actor C as Client
+    participant S as Server
+    participant DB as Database
+    C->>S: Login (Username, Password)
+    S->>DB: Select User Info
+    note over DB: Password is not stored in database
+    DB-->>S: Salt & Hash
+    S-->>C: 200 OK & JWT
+    note over C, S: Subsequent requests include JWT
+
+#!markdown
+
+### Self-Referencing Messages
+
+#!mermaid
+
+sequenceDiagram
+    autonumber
+    actor C as Client
+    participant S as Server
+    participant DB as Database
+    C->>S: Login (Username, Password)
+    S->>DB: Select User Info
+    note over DB: Password is not stored in database
+    DB-->>S: Salt & Hash
+    S->>S: Check Computed Hash using Salt
+    S->>S: Generate JWT
+    S-->>C: 200 OK & JWT
+    note over C, S: Subsequent requests include JWT
+
+#!markdown
+
+### Conditional Logic
+
+#!mermaid
+
+sequenceDiagram
+    autonumber
+    actor C as Client
+    participant S as Server
+    participant DB as Database
+    C->>S: Login (Username, Password)
+    S->>DB: Select User Info
+    note over DB: Password is not stored in database
+    DB-->>S: Salt & Hash
+    S->>S: Check Computed Hash using Salt
+    alt Computed Hash Matches
+        S->>S: Generate JWT
+        S-->>C: 200 OK & JWT
+    else No user or wrong password
+        S-->>C: 401 Unauthorized
+    end
+    note over C, S: Subsequent requests include JWT
+
+#!markdown
+
+### Activation / Deactivation
+
+#!mermaid
+
+sequenceDiagram
+    autonumber
+    actor C as Client
+    participant S as Server
+    participant DB as Database
+    C->>S: Login (Username, Password)
+    activate S
+        S->>DB: Select User Info
+        
+        activate DB
+            note over DB: Password is not stored in database
+            DB-->>S: Salt & Hash
+        deactivate DB
+
+        S->>S: Check Computed Hash using Salt
+        alt Computed Hash Matches
+            S->>S: Generate JWT
+            S-->>C: 200 OK & JWT
+        else No user or wrong password
+            S-->>C: 401 Unauthorized
+        end
+    deactivate S
+    note over C, S: Subsequent requests include JWT
+
+#!mermaid
+
+sequenceDiagram
+    autonumber
+    actor C as Client
+    participant S as Server
+    participant DB as Database
+    C->>+S: Login (Username, Password)
+        S->>+DB: Select User Info
+            note over DB: Password is not stored in database
+        DB-->>-S: Salt & Hash
+
+        S->>S: Check Computed Hash using Salt
+        alt Computed Hash Matches
+            S->>S: Generate JWT
+            S-->>C: 200 OK & JWT
+        else No user or wrong password
+            S-->>C: 401 Unauthorized
+        end
+        note over C, S: Subsequent requests include JWT
+    deactivate S

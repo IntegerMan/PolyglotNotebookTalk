@@ -1,0 +1,180 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Class Diagrams
+
+See [my article on class diagrams](https://newdevsguide.com/2023/04/08/mermaid-class-diagrams/) for additional context & information
+
+#!markdown
+
+### Old Notation
+
+#!mermaid
+
+classDiagram
+    class GameObject
+    GameObject : -String Name
+    GameObject : -int PosX
+    GameObject : -int PosY
+    GameObject : +Despawn() void
+
+#!mermaid
+
+classDiagram
+    GameObject <-- DamageableObject
+    GameObject : +String Name
+    GameObject : +Point Position
+    GameObject <-- SpecialEffect
+    SpecialEffect: -double Intensity
+    SpecialEffect: +PlayEffect()
+    DamageableObject : -int HitPoints
+    DamageableObject : +bool IsDead
+    DamageableObject: +TakeDamage(int damage)
+    DamageableObject <-- Player
+    DamageableObject <-- Monster
+    Player: -int Score
+    Player: -int LivesLeft
+    Player: +RewardForKill(Monster)
+    Monster: -int PointValue
+    Monster: -int ThreatLevel
+    Monster: +Kill()
+
+#!markdown
+
+### New Notation
+
+#!mermaid
+
+classDiagram
+    class GameObject {
+        -String Name
+        -int PosX
+        -int PosY
+        +Despawn() void
+    }
+
+#!mermaid
+
+classDiagram
+    class GameObject {
+        -String Name
+        -int PosX
+        -int PosY
+        +Despawn() void
+    }
+    class DamageableObject {
+        +int MaxHealth
+        -int Health
+        +IsDead() bool
+        +TakeDamage(int damage) void
+        +OnKilled() void
+    }
+    GameObject <|-- DamageableObject
+
+#!markdown
+
+### Aggregation & Composition
+
+#!mermaid
+
+classDiagram
+    Human *-- Cells : Is Composed of
+    Salesperson o-- Sales : Makes
+
+#!mermaid
+
+classDiagram
+    Human *-- Cells : composed of
+    Salesperson o-- Sales : makes
+    Human <|-- Salesperson : is
+
+#!mermaid
+
+classDiagram
+    Human "1" *-- "*" Cells : composed of
+    Salesperson "1" o-- "0..*" Sales : makes
+    Human <|-- Salesperson : is
+
+#!markdown
+
+### Abstract Classes
+
+#!mermaid
+
+classDiagram
+    class GameObject {
+        -String Name
+        -int PosX
+        -int PosY
+        +Despawn() void
+    }
+    class DamageableObject {
+        <<abstract>>
+        +int MaxHealth
+        -int Health
+        +IsDead() bool
+        +TakeDamage(int damage) void
+        +OnKilled()* void
+    }
+    GameObject <|-- DamageableObject
+
+#!mermaid
+
+classDiagram
+    class GameObject {
+        +String Name
+        +int PosX
+        +int PosY
+        +Despawn() void
+    }
+    class DamageableObject {
+        <<abstract>>
+        +int MaxHealth
+        -int Health
+        +IsDead() bool
+        +TakeDamage(int damage) void
+        +OnKilled()* void
+    }
+    class Player {
+        -int Score
+        -int LivesRemaining
+        +OnKilled() void
+    }
+    class Monster {
+        -int ThreatLevel
+        -Color Color
+        +MakeNoise(double decibelLevel) string
+        +OnKilled() void
+    }
+    GameObject <|-- DamageableObject
+    DamageableObject <|-- Player
+    DamageableObject <|-- Monster
+
+#!markdown
+
+### Generics (~)
+
+#!mermaid
+
+classDiagram
+    class Queue~T~ {
+        -IEnumerable~T~ items
+        +Enqueue(T item) void
+        +Dequeue() T
+        +HasItems() bool
+    }
+
+#!markdown
+
+### Static ($)
+
+#!mermaid
+
+classDiagram
+    class ColorManager {
+        -Dictionary~string_Color~ hexColors$
+        +BuildColorFromHex(string hexCode)$ Color
+    }
