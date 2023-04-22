@@ -1,0 +1,17 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Pie Charts
+
+**TODO:** Link to my article
+
+#!mermaid
+
+pie 
+    title Leading Causes of Developer Tears
+    "JavaScript": 42
+    "DNS": 8
+    "Leaving a VM on": 15

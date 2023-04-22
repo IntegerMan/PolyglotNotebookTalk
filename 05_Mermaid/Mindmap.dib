@@ -1,0 +1,50 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## MindMap (Coming Soon)
+
+**TODO:** Link to article
+
+#!mermaid
+
+mindmap
+    Talk
+        Notebooks
+            What
+            Why
+            How
+        Jupyter Notebooks
+            IDEs
+                VS Code
+                DataSpell
+                Web Browser
+            Anaconda
+        Polyglot Notebooks
+            Installation
+            Languages
+                CSharp
+                FSharp
+                JS
+                CSS
+                SQL
+                KQL
+                Mermaid
+                    Class Diagram
+                    Gantt
+                    Timeline
+                    User Experience Journey
+                    Pie Chart
+                    ERD
+                    Mindmaps
+                    Requirements
+            Variable Sharing
+        Next Steps
+
+#!markdown
+
+Mindmap diagrams are not supported on Mermaid.js version 9.1.7, which is the current version used by Polyglot Notebooks, so here's a screenshot:
+
+![Mindmap Diagram](../Images/Mindmap.png)

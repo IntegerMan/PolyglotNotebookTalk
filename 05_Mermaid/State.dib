@@ -1,0 +1,117 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## State Diagram / Finite State Machines (FSM)
+
+**TODO:** Link to article
+
+**TODO:** Embed a gif and/or video of boss encounter
+
+#!mermaid
+
+stateDiagram-v2
+    [*] --> Descending
+    Descending --> Attack
+    Attack --> Pain
+    Pain --> Attack
+    Attack --> Dead
+    Pain --> Dead
+    Dead --> [*]
+
+#!mermaid
+
+stateDiagram-v2
+    direction LR
+    [*] --> Descending
+    Descending --> Attack
+    Attack --> Pain
+    Pain --> Attack
+    Attack --> Dead
+    Pain --> Dead
+    Dead --> [*]
+
+#!mermaid
+
+stateDiagram-v2
+    [*] --> Descending      : Player entered arena
+    Descending --> Attack   : After roar animation
+    Attack --> Pain         : Hurt a lot
+    Pain --> Attack         : Finished animation
+    Attack --> Dying        : Ran out of health
+    Pain --> Dying          : Ran out of health
+    Dying --> [*]           : After death animation
+
+#!mermaid
+
+stateDiagram-v2
+    direction LR
+    
+    state intro {
+        [*] --> Descending
+        Descending --> Roar
+        Roar --> [*]
+    }
+    state combat {
+        [*] --> Attacking
+        Attacking --> Pain
+        Pain --> Attacking
+    }
+    state defeated {
+        [*] --> Dying
+        Dying --> Dead
+        Dead --> [*]
+    }
+
+    [*] --> intro
+    intro --> combat
+    combat --> defeated
+    defeated --> [*]
+
+#!mermaid
+
+stateDiagram-v2
+    direction LR
+
+    state intro {
+        Descending --> Roar
+        Roar --> Attacking
+    }
+    state combat {
+        Attacking --> Pain
+        Pain --> Attacking
+    }
+    state defeated {
+        Dying --> Dead
+    }
+
+    [*] --> Descending
+    combat --> Dying
+    Dead --> [*]
+
+    note left of combat: The boss is damageable in this state
+
+#!mermaid
+
+stateDiagram-v2
+    direction LR
+
+    state intro {
+        Descending --> Roar : Movement Finished
+        Roar --> Attacking  : Animation Finished
+    }
+    state combat {
+        Attacking --> Pain  : Took Enough Damage
+        Pain --> Attacking  : Animation Finished
+    }
+    state defeated {
+        Dying --> Dead      : Animation Finished
+    }
+
+    [*] --> Descending      : Spotted player
+    combat --> Dying        : Took enough damage
+    Dead --> [*]            : AI Stopped
+
+    note left of combat: The boss is damageable in this state

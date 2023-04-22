@@ -1,0 +1,84 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Entity Relationship Diagrams (ERDs)
+
+See [My Article on Entity Relationship Diagrams in Mermaid.js](https://newdevsguide.com/2023/04/08/creating-erds-with-mermaid/) for more information on ERDs.
+
+#!markdown
+
+### Defining Entities
+
+#!mermaid
+
+erDiagram
+    CITY
+    STATE
+    COUNTRY
+
+#!markdown
+
+### Defining Relationships
+
+#!mermaid
+
+erDiagram
+    COUNTRY ||--|{ STATE : "Has"
+    STATE ||--|{ CITY : "Has"
+    CITY ||--o| STATE : "Is capital of"
+    CITY ||--o| COUNTRY : "Is capital of"
+
+#!markdown
+
+### Defining Attributes
+
+#!mermaid
+
+erDiagram
+    CITY {
+        int city_id
+        string name
+        string state_abbreviation
+    }
+    STATE {
+        string state_abbreviation
+        string name
+        int country_id
+    }
+    COUNTRY {
+        int country_id
+        string name
+    }
+    COUNTRY ||--|{ STATE : "Has"
+    STATE ||--|{ CITY : "Has"
+    CITY ||--o| STATE : "Is capital of"
+    CITY ||--o| COUNTRY : "Is capital of"
+
+#!markdown
+
+### Primary and Foreign Keys
+
+#!mermaid
+
+erDiagram
+    CITY {
+        int city_id PK
+        string name
+        string state_abbreviation FK
+    }
+    STATE {
+        string state_abbreviation PK
+        string name
+        int country_id FK
+    }
+    COUNTRY {
+        int country_id PK
+        string name
+    }
+    COUNTRY ||--|{ STATE : "Has"
+    STATE ||--|{ CITY : "Has"
+    CITY ||--o| STATE : "Is capital of"
+    CITY ||--o| COUNTRY : "Is capital of"

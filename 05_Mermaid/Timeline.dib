@@ -1,0 +1,172 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Timeline Charts
+**NOTE: Not supported in Mermaid 9.1.7**
+
+Will be available in future Polyglot releases
+
+**TODO:** Get Timeline code from the article and link the article here
+
+#!mermaid
+
+timeline
+    2000 - 2005 
+    2006 - 2009 
+    2010 - 2015 
+    2016 - 2017 
+    2018 - 2019 
+    2020
+    2021 
+    2022
+
+#!mermaid
+
+timeline
+    2000 - 2005 
+        : .NET Framework 1.0
+        : .NET Framework 1.0 SP1
+        : .NET Framework 1.0 SP2
+        : .NET Framework 1.1
+        : .NET Framework 1.0 SP3
+        : .NET Framework 2.0
+    2006 - 2009 
+        : .NET Framework 3.0
+        : .NET Framework 3.5 
+        : .NET Framework 2.0 SP 1 
+        : .NET Framework 3.0 SP 1 
+        : .NET Framework 2.0 SP 2 
+        : .NET Framework 3.0 SP 2 
+        : .NET Framework 3.5 SP 1
+    2010 - 2015 
+        : .NET Framework 4.0
+        : .NET Framework 4.5
+        : .NET Framework 4.5.1
+        : .NET Framework 4.5.2
+        : .NET Framework 4.6
+        : .NET Framework 4.6.1
+    2016 - 2017 
+        : .NET Core 1.0
+        : .NET Core 1.1
+        : .NET Framework 4.6.2
+        : .NET Core 2.0
+        : .NET Framework 4.7
+        : .NET Framework 4.7.1
+    2018 - 2019 
+        : .NET Core 2.1
+        : .NET Core 2.2
+        : .NET Framework 4.7.2             
+        : .NET Core 3.0
+        : .NET Core 3.1
+        : .NET Framework 4.8
+    2020 
+        : .NET 5
+    2021 
+        : .NET 6
+    2022 
+        : .NET 7
+        : .NET Framework 4.8.1
+
+#!mermaid
+
+timeline
+    section .NET Framework
+        2000 - 2005 
+             : .NET Framework 1.0
+             : .NET Framework 1.0 SP1
+             : .NET Framework 1.0 SP2
+             : .NET Framework 1.1
+             : .NET Framework 1.0 SP3
+             : .NET Framework 2.0
+        2006 - 2009 
+             : .NET Framework 3.0
+             : .NET Framework 3.5 
+             : .NET Framework 2.0 SP 1 
+             : .NET Framework 3.0 SP 1 
+             : .NET Framework 2.0 SP 2 
+             : .NET Framework 3.0 SP 2 
+             : .NET Framework 3.5 SP 1
+        2010 - 2015 
+             : .NET Framework 4.0
+             : .NET Framework 4.5
+             : .NET Framework 4.5.1
+             : .NET Framework 4.5.2
+             : .NET Framework 4.6
+             : .NET Framework 4.6.1
+    section .NET Core
+        2016 - 2017 
+             : .NET Core 1.0
+             : .NET Core 1.1
+             : .NET Framework 4.6.2
+             : .NET Core 2.0
+             : .NET Framework 4.7
+             : .NET Framework 4.7.1
+        2018 - 2019 
+             : .NET Core 2.1
+             : .NET Core 2.2
+             : .NET Framework 4.7.2             
+             : .NET Core 3.0
+             : .NET Core 3.1
+             : .NET Framework 4.8
+    section Modern .NET
+        2020 : .NET 5
+        2021 : .NET 6
+        2022 : .NET 7
+             : .NET Framework 4.8.1
+
+#!mermaid
+
+timeline
+    title Major .NET Releases
+    section .NET Framework
+        2000 - 2005 
+             : .NET Framework 1.0
+             : .NET Framework 1.0 SP1
+             : .NET Framework 1.0 SP2
+             : .NET Framework 1.1
+             : .NET Framework 1.0 SP3
+             : .NET Framework 2.0
+        2006 - 2009 
+             : .NET Framework 3.0
+             : .NET Framework 3.5 
+             : .NET Framework 2.0 SP 1 
+             : .NET Framework 3.0 SP 1 
+             : .NET Framework 2.0 SP 2 
+             : .NET Framework 3.0 SP 2 
+             : .NET Framework 3.5 SP 1
+        2010 - 2015 
+             : .NET Framework 4.0
+             : .NET Framework 4.5
+             : .NET Framework 4.5.1
+             : .NET Framework 4.5.2
+             : .NET Framework 4.6
+             : .NET Framework 4.6.1
+    section .NET Core
+        2016 - 2017 
+             : .NET Core 1.0
+             : .NET Core 1.1
+             : .NET Framework 4.6.2
+             : .NET Core 2.0
+             : .NET Framework 4.7
+             : .NET Framework 4.7.1
+        2018 - 2019 
+             : .NET Core 2.1
+             : .NET Core 2.2
+             : .NET Framework 4.7.2             
+             : .NET Core 3.0
+             : .NET Core 3.1
+             : .NET Framework 4.8
+    section Modern .NET
+        2020 : .NET 5
+        2021 : .NET 6
+        2022 : .NET 7
+             : .NET Framework 4.8.1
+
+#!markdown
+
+Timeline View isn't supported in Mermaid 9.1.7 which is what Polylgot currently uses, so here's a screenshot of the results:
+
+![Timeline View](../Images/Timeline.png)

@@ -1,0 +1,120 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Git Graphs
+
+#!mermaid
+
+%%{init: { 'theme': 'base' } }%%
+gitGraph
+    commit
+    commit
+    commit
+
+#!mermaid
+
+%%{init: { 'theme': 'base' } }%%
+gitGraph
+    commit
+    commit id: "Fixed Issue #42"
+    commit
+
+#!markdown
+
+### Branching
+
+#!mermaid
+
+%%{init: { 'theme': 'base' } }%%
+gitGraph
+    commit
+    commit
+    branch feature
+        commit
+
+#!mermaid
+
+%%{init: { 'theme': 'base' } }%%
+gitGraph
+    commit
+    commit
+    branch feature
+        commit id: "Dark Theme"
+    checkout main
+        merge feature
+        commit
+
+#!mermaid
+
+%%{init: { 'theme': 'base' } }%%
+gitGraph
+    commit
+    branch feature
+    checkout main
+        commit
+    branch bugfix
+        commit
+    checkout feature
+        commit id: "Dark Theme"
+    checkout main
+        merge feature
+        commit
+    checkout bugfix
+        commit id: "Fixed Null Ref"
+    checkout main
+        merge bugfix
+        commit
+
+#!markdown
+
+### Tags
+
+#!mermaid
+
+%%{init: { 'theme': 'base' } }%%
+gitGraph
+    commit tag: "v0.4.0"
+    branch feature
+    checkout main
+        commit
+    branch bugfix
+        commit
+    checkout feature
+        commit id: "Dark Theme"
+    checkout main
+        merge feature
+        commit tag: "v0.4.1"
+        commit
+    checkout bugfix
+        commit id: "Fixed Null Ref"
+    checkout main
+        merge bugfix tag: "v0.4.2"
+    commit
+
+#!markdown
+
+### Highlighting Commits
+
+#!mermaid
+
+%%{init: { 'theme': 'base' } }%%
+gitGraph
+    commit tag: "v0.4.0"
+    branch feature
+    checkout main
+    commit
+    branch bugfix
+    commit id: "Whoopsies" type: REVERSE
+    checkout feature
+    commit id: "Dark Theme"
+    checkout main
+    merge feature
+    commit tag: "v0.4.1"
+    commit type: HIGHLIGHT
+    checkout bugfix
+    commit id: "Fixed Null Ref"
+    checkout main
+    merge bugfix tag: "v0.4.2"

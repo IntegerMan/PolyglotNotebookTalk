@@ -1,0 +1,100 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Requirement Diagrams
+
+**TODO:** Link to article
+
+#!mermaid
+
+requirementDiagram
+
+requirement dark_theme {
+    id: 1
+    text: Dark Themes Rule!
+    risk: low
+    verifymethod: inspection
+}
+
+#!mermaid
+
+requirementDiagram
+
+interfaceRequirement dark_theme {
+    id: 1
+    text: Dark Themes Rule!
+    risk: low
+    verifymethod: inspection
+}
+
+element revised_skin {
+    type: css,
+    docRef: theme.css
+}
+
+#!mermaid
+
+requirementDiagram
+
+interfaceRequirement dark_theme {
+    id: 1
+    text: Dark Themes Rule!
+    risk: low
+    verifymethod: inspection
+}
+
+performanceRequirement load_time {
+    id: 2
+    text: 200ms or less
+    risk: medium
+    verifymethod: analysis
+}
+
+element revised_skin {
+    type: css,
+    docRef: theme.css
+}
+
+#!mermaid
+
+requirementDiagram
+
+interfaceRequirement dark_theme {
+    id: 1
+    text: Dark Themes Rule!
+    risk: low
+    verifymethod: demonstration
+}
+
+performanceRequirement load_time {
+    id: 2
+    text: 200ms or less
+    risk: medium
+    verifymethod: test
+}
+
+functionalRequirement accessibility {
+    id: 3
+    text: Contrast
+    risk: low
+    verifymethod: inspection
+}
+
+element revised_skin {
+    type: css,
+    docRef: theme.css
+}
+
+
+element perf_test {
+    type: unit test,
+    docRef: LoadTest.cs
+}
+
+revised_skin - satisfies -> dark_theme
+revised_skin - satisfies -> accessibility
+revised_skin - satisfies -> load_time
+perf_test - satisfies -> load_time

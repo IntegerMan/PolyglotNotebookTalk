@@ -1,0 +1,67 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## User Journey Mapping
+
+**TODO:** Link to my article
+
+#!mermaid
+
+journey
+    title Attend a Tech Conference
+    Buy a Ticket: 4
+    Check Schedule before Conference: 6
+    Check in at Conference: 5
+    Check Schedule at Conference: 4
+    Attend Talk: 5
+    Lunch: 3
+    "Hallway Track": 5
+    Post-Conference Movie: 7
+
+#!mermaid
+
+journey
+    title Attend a Tech Conference
+    Buy a Ticket: 4: Attendees, Point of Sales
+    Check Schedule before Conference: 6: Attendees, Web Site
+    Check in at Conference: 5: Attendees, Volunteers
+    Check Schedule at Conference: 4: Attendees, Mobile App    
+    Attend Talk: 5: Attendees, Speakers, Volunteers
+    Lunch: 3: Attendees, Volunteers
+    "Hallway Track": 5: Attendees, Volunteers
+    Post-Conference Movie: 7: Attendees, Volunteers, Speakers
+
+#!mermaid
+
+journey
+    title Attend a Tech Conference
+    section Pre-Conference
+        Buy a Ticket: 4
+        Check Schedule before Conference: 6
+    section Morning
+        Check in at Conference: 5
+        Check Schedule at Conference: 4
+        Attend Talk: 5
+    section Afternoon
+        Lunch: 3
+        "Hallway Track": 5
+        Post-Conference Movie: 7
+
+#!mermaid
+
+journey
+    title Attend a Tech Conference
+    section Pre-Conference
+        Buy a Ticket: 4: Attendees, Point of Sales
+        Check Schedule before Conference: 6: Attendees, Web Site
+    section Morning
+        Check in at Conference: 5: Attendees, Volunteers
+        Check Schedule at Conference: 4: Attendees, Mobile App    
+        Attend Talk: 5: Attendees, Speakers, Volunteers
+    section Afternoon
+        Lunch: 3: Attendees, Volunteers
+        "Hallway Track": 5: Attendees, Volunteers
+        Post-Conference Movie: 7: Attendees, Volunteers, Speakers
