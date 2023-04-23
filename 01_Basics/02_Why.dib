@@ -1,0 +1,33 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Why do Notebooks Matter?
+
+#!mermaid
+
+mindmap
+    Why?
+    ::icon(fa fa-question)
+        Data Visualization
+        ::icon(fa fa-chart-line)
+        Exploratory Data Analysis
+        ::icon(fa fa-table)
+        Data Transformation
+        ::icon(fa fa-shuffle)
+        Machine Learning
+        ::icon(fa fa-flask)
+        Teaching / Training
+        ::icon(fa fa-chalkboard-user)
+        Documentation
+        ::icon(fa fa-book)
+        Prototyping / Testing
+        ::icon(fa fa-vial-circle-check)
+        Triggering / Customizing Workflows
+        ::icon(fa fa-play)
+
+#!markdown
+
+![Mind Map: Why](../Images/MM_Why.png)
