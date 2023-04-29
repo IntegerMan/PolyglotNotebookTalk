@@ -1,0 +1,95 @@
+## Remaining Tasks
+
+- [ ] Resources web page
+- [ ] Welcome: QR Code for Link
+- [ ] Welcome Mind Map
+- [ ] Discord Link to Resources
+- [ ] Cell Tags?
+
+- [ ] 02_Jupyter/00_Jupyter - Add Screenshots of various IDEs
+- [ ] 02_Jupyter/00_Jupyter - Add way of running Jupyter Notebook in Browser
+- [ ] 02_Jupyter/00_Jupyter - Add way of running Jupyter Labs in Browser
+- [ ] 02_Jupyter/00_Jupyter - Add screenshot of Azure Notebook
+- [ ] 02_Jupyter/01_CallingFunctions - Add a Function
+- [ ] 02_Jupyter/01_CallingFunctions - Call the function
+- [ ] 02_Jupyter/02_CallingScripts - Show the script
+- [ ] 02_Jupyter/02_CallingScripts - Call the script
+- [ ] 02_Jupyter/02_CallingScripts - Change and then re-call the script
+- [ ] 02_Jupyter/03_Packages - Show `%` to install
+- [ ] 02_Jupyter/03_Packages - Show `!` to install
+- [ ] 02_Jupyter/03_Packages - Talk about Anaconda
+- [ ] 02_Jupyter/04_Julia - Show Julia Code
+- [ ] 02_Jupyter/04_Julia - Talk about getting Julia Code to Run
+- [ ] 02_Jupyter/05_R - Show R Code
+- [ ] 02_Jupyter/05_R - Talk about getting R Code to Run
+
+- [ ] 03_Polyglot/00_Polyglot - Talk about what Polyglot Notebooks is
+- [ ] 03_Polyglot/01_CSharp - Show variable sharing
+- [ ] 03_Polyglot/01_CSharp - Show creating a class
+- [ ] 03_Polyglot/02_FSharp - Show creating a function
+- [ ] 03_Polyglot/02_FSharp - Show calling a function
+- [ ] 03_Polyglot/02_FSharp - Show variable sharing
+- [ ] 03_Polyglot/03_InteropCSFS - Show language interop
+- [ ] 03_Polyglot/04_NuGet Packages - Show referencing a LOCAL assembly
+- [ ] 03_Polyglot/04_NuGet Packages - Show referencing a NuGet Package
+- [ ] 03_Polyglot/05_UserInput - Show Console.ReadLine
+- [ ] 03_Polyglot/05_UserInput - Show Correct way of getting input
+- [ ] 03_Polyglot/06_SQL - Have a local database running
+- [ ] 03_Polyglot/06_SQL - Select from the database
+- [ ] 03_Polyglot/06_SQL - Modify the Database
+- [ ] 03_Polyglot/07_Powershell - Show simple variable sharing
+- [ ] 03_Polyglot/07_Powershell - Make a REST call to a local endpoint
+- [ ] 03_Polyglot/08_JS - Show defining JS functions
+- [ ] 03_Polyglot/08_JS - Show calling JS functions
+- [ ] 03_Polyglot/08_JS - Show JS variable sharing limitations
+- [ ] 03_Polyglot/08_JS - Show JS / HTML Interaction
+- [ ] 03_Polyglot/09_InteropCSJS - Show JS using CS variables
+- [ ] 03_Polyglot/10_KQL - Talk about what KQL is
+- [ ] 03_Polyglot/10_KQL - Show an example of KQL, if possible
+- [ ] 03_Polyglot/11_RawValueStorage - Show Raw Value Storage interop with C#
+- [ ] 03_Polyglot/12_Mermaid - Show Mind Map of Charts
+- [ ] 03_Polyglot/12_Mermaid - Show Screenshots of Charts
+- [ ] 03_Polyglot/13_Magic Commands - Get a list of all magic commands built in
+- [ ] 03_Polyglot/13_Magic Commands - Talk about each magic command
+- [ ] 03_Polyglot/14_Extensions - Talk about extensibility and existing extensions
+
+- [ ] 04_UsageScenarios/01_PandasProcessing - Choose a CSV file
+- [ ] 04_UsageScenarios/01_PandasProcessing - Show Loading a CSV File
+- [ ] 04_UsageScenarios/01_PandasProcessing - Show Adding Columns
+- [ ] 04_UsageScenarios/01_PandasProcessing - Show Removing Columns
+- [ ] 04_UsageScenarios/01_PandasProcessing - Show Descriptive Statistics
+- [ ] 04_UsageScenarios/01_PandasProcessing - Show Grouping Columns
+- [ ] 04_UsageScenarios/01_PandasProcessing - Show Built-In Charts
+- [ ] 04_UsageScenarios/01_PandasProcessing - Show Export to CSV File
+- [ ] 04_UsageScenarios/02_DataVisualization - Load Git Data from CSV
+- [ ] 04_UsageScenarios/02_DataVisualization - Show Line Chart
+- [ ] 04_UsageScenarios/02_DataVisualization - Show Bar Chart
+- [ ] 04_UsageScenarios/02_DataVisualization - Show Scatter Plot
+- [ ] 04_UsageScenarios/02_DataVisualization - Show 3D Scatter Plot
+- [ ] 04_UsageScenarios/02_DataVisualization - Show Box Plot
+- [ ] 04_UsageScenarios/02_DataVisualization - Show Histogram Plot
+- [ ] 04_UsageScenarios/02_DataVisualization - Show Treemap
+- [ ] 04_UsageScenarios/02_DataVisualization - Show Wheel Treemap
+- [ ] 04_UsageScenarios/03_MachineLearning - Show SciKitLearn and Titanic
+- [ ] 04_UsageScenarios/04_MachineLearningDotnet - Show ML .NET and Titanic
+- [ ] 04_UsageScenarios/05_InteractiveDocumentation - Show class instantiation
+- [ ] 04_UsageScenarios/05_InteractiveDocumentation - Show class behavior
+- [ ] 04_UsageScenarios/06_Prototyping - Show a class documentation
+- [ ] 04_UsageScenarios/06_Prototyping - Update a class with `partial`
+- [ ] 04_UsageScenarios/07_TriggeringWorkflows - Make a `POST` request to a local endpoint OR trigger an automated ML workflow on Azure
+- [ ] 04_UsageScenarios/08_Teaching - Show a sample tutorial on working with C# Strings
+- [ ] 04_UsageScenarios/08_TryDotnet - Show how Microsoft uses Polyglot for Try .NET
+
+- [ ] 05_Mermaid/_Index - Need a mind map
+
+- [ ] 06_Deploying/00_DeployJupyter - Talk about deploying Jupyter Locally
+- [ ] 06_Deploying/00_DeployJupyter - Talk about deploying Jupyter in the Cloud
+- [ ] 06_Deploying/01_GitHub - Talk about Notebooks on GitHub and GitHub CodeSpaces
+- [ ] 06_Deploying/02_Azure - Talk about Azure Machine Learning Studio Notebooks
+- [ ] 06_Deploying/03_DeployPolyglot - Talk about deploying Polyglot Notebooks
+
+- [ ] 07_GettingStarted/01_Anaconda - Talk about installing Anaconda
+- [ ] 07_GettingStarted/02_Polyglot - Talk about installing Polyglot and VS Code
+- [ ] 07_GettingStarted/03_LearningMaterials - Talk about resources available for additional learning
+- [ ] 07_GettingStarted/03_LearningMaterials - Include link to resources
+- [ ] 07_GettingStarted/04_Questions - Include link to resources
