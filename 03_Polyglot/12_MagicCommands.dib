@@ -1,0 +1,34 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Magic Commands
+Polylgot Notebooks support **magic commands** that let you control the kernel, time execution, list variable values, and a few other meta-related things.
+
+For example, the `#!about` magic command will tell you about your kernel
+
+#!csharp
+
+#!about
+
+#!markdown
+
+Magic commands can be listed via the `#!lsmagic` magic command
+
+#!csharp
+
+#!lsmagic
+
+#!csharp
+
+#!time
+// Let's declare a few variables to try this out
+string month = "May";
+int day = 5;
+int year = 2023;
+
+#!csharp
+
+#!whos

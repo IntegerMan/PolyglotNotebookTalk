@@ -19,7 +19,7 @@
 - [x] 02_Jupyter/03_Packages - Show `!` to install
 - [x] 02_Jupyter/03_Packages - Talk about Anaconda
 
-- [ ] 03_Polyglot/00_Polyglot - Talk about what Polyglot Notebooks is
+- [x] 03_Polyglot/00_Polyglot - Talk about what Polyglot Notebooks is
 - [ ] 03_Polyglot/01_CSharp - Show variable sharing
 - [ ] 03_Polyglot/01_CSharp - Show creating a class
 - [ ] 03_Polyglot/02_FSharp - Show creating a function
@@ -42,12 +42,11 @@
 - [ ] 03_Polyglot/09_InteropCSJS - Show JS using CS variables
 - [ ] 03_Polyglot/10_KQL - Talk about what KQL is
 - [ ] 03_Polyglot/10_KQL - Show an example of KQL, if possible
-- [ ] 03_Polyglot/11_RawValueStorage - Show Raw Value Storage interop with C#
-- [ ] 03_Polyglot/12_Mermaid - Show Mind Map of Charts
-- [ ] 03_Polyglot/12_Mermaid - Show Screenshots of Charts
-- [ ] 03_Polyglot/13_Magic Commands - Get a list of all magic commands built in
-- [ ] 03_Polyglot/13_Magic Commands - Talk about each magic command
-- [ ] 03_Polyglot/14_Extensions - Talk about extensibility and existing extensions
+- [x] 03_Polyglot/11_Mermaid - Show Mind Map of Charts
+- [x] 03_Polyglot/11_Mermaid - Show Screenshots of Charts
+- [x] 03_Polyglot/12_Magic Commands - Get a list of all magic commands built in
+- [x] 03_Polyglot/12_Magic Commands - Talk about each magic command
+- [ ] 03_Polyglot/13_Extensions - Talk about extensibility and existing extensions
 
 - [ ] 04_UsageScenarios/01_PandasProcessing - Choose a CSV file
 - [ ] 04_UsageScenarios/01_PandasProcessing - Show Loading a CSV File
@@ -73,10 +72,10 @@
 - [ ] 04_UsageScenarios/06_Prototyping - Show a class documentation
 - [ ] 04_UsageScenarios/06_Prototyping - Update a class with `partial`
 - [ ] 04_UsageScenarios/07_TriggeringWorkflows - Make a `POST` request to a local endpoint OR trigger an automated ML workflow on Azure
-- [ ] 04_UsageScenarios/08_Teaching - Show a sample tutorial on working with C# Strings
+- [x] 04_UsageScenarios/08_Teaching - Show a sample tutorial on working with C# Strings
 - [ ] 04_UsageScenarios/08_TryDotnet - Show how Microsoft uses Polyglot for Try .NET
 
-- [ ] 05_Mermaid/_Index - Need a mind map
+- [x] 05_Mermaid/_Index - Need a mind map
 
 - [ ] 06_Deploying/00_DeployJupyter - Talk about deploying Jupyter Locally
 - [ ] 06_Deploying/00_DeployJupyter - Talk about deploying Jupyter in the Cloud

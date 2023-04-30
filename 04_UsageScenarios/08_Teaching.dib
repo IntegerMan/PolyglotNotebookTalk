@@ -1,0 +1,58 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Strings in dotnet
+
+This interactive exercise will help you understand strings and common string operations in dotnet.
+
+#!markdown
+
+### Declaring Strings
+Strings are any sequence of *characters* making up a larger word, sentence, paragraph, or larger bodies of text.
+
+Dotnet, like other programming languages, organizes strings as array of characters with special methods that make strings easier to work with.
+
+#!csharp
+
+// You can declare a string using quotes
+string myString = "This is a new string";
+
+#!csharp
+
+// You can also declare a string using a constructor, though nobody does it this way
+string anotherString = new String("This is also a string");
+
+#!csharp
+
+// Once you have a string, you can display it to the console via Console.WriteLine
+Console.WriteLine(myString);
+Console.WriteLine(anotherString);
+
+#!markdown
+
+**Your Turn**
+
+Now declare a string in a variable named `answer` and give it the value of `Hello Strings`
+
+#!csharp
+
+// Declare a variable named answer with the value of Hello Strings.
+// You do not need to write this to the console, but may if you wish
+
+#!csharp
+
+// Add NuGet Dependencies
+#r "nuget:Microsoft.NET.Test.Sdk"
+#r "nuget:xunit"
+#r "nuget:Shouldly"
+
+#!csharp
+
+using Xunit;
+using Shouldly;
+
+// The code below verifies your code for correctness. Do not modify this code.
+answer.ShouldBe("Hello Strings");

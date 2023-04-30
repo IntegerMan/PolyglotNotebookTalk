@@ -5,3 +5,25 @@
 #!markdown
 
 # Mermaid Diagrams
+
+#!mermaid
+
+mindmap
+    Mermaid Diagrams
+        Flowchart
+        Git graph
+        Sequence Diagram
+        Class Diagram
+        ERD
+        Gantt Chart
+        User Journey
+        State Chart
+        Requirement Diagram
+        Pie Chart
+        C4 Context
+        Mind Map
+        Timeline
+
+#!markdown
+
+![Mermaid Diagrams](../Images/MM_Mermaid.png)
