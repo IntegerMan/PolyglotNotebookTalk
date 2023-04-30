@@ -1,0 +1,98 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## High-Level Concepts
+
+This document contains high-level concepts useful for understanding Notebooks.
+
+#!markdown
+
+### What is a Notebook?
+
+![Notebook Concepts Art](../Images/ArtNotebookConcepts.png)
+
+Notebooks are collections of **cells** that are either **code** or **markdown** cells.
+
+Notebooks allow you to combine documentation and code with **variable sharing** between different code blocks. Additionally, the output of code blocks can be visualized inside of the notebook.
+
+This means the notebook itself is a **new form of interactive application**.
+
+#!markdown
+
+### What is a Kernel?
+
+![Notebook Kernel Concept Art](../Images/ArtCogs.png)
+
+A kernel is a programming language specific process that interacts with the Notebook to execute code and output results.
+
+Different kernels can support different programming languages.
+
+In **VS Code** you must select which kernel your Notebook runs.
+
+![Selecting a Kernel in VS Code](../Images/SelectKernel.png)
+
+Some kernels include:
+
+- Python
+- R
+- Julia
+- .NET Interactive (Polyglot Notebooks)
+
+#!markdown
+
+### .ipynb Files vs .dib Files
+
+#!mermaid
+
+timeline
+    .ipynb Files
+        : Store Code & History
+        : Do not require running
+        : Tend to be large
+        : Harder to merge
+    .dib Files
+        : Only store code
+        : Requires running Notebook
+        : As large as the code
+        : Easier to merge
+
+#!markdown
+
+![Notebook Formats](../Images/TL_NotebookFormats.png)
+
+**.ipynb** files are notebook files that *store the code and its prior results* so they don't need to be re-run. These tend to be larger files.
+
+**.dib** files are notebook files that use limited markdown to store just the cell contents *without results*. They are smaller and easier to manage in version control.
+
+#!markdown
+
+### Why do we Care?
+
+#!mermaid
+
+mindmap
+    Why?
+    ::icon(fa fa-question)
+        Data Visualization
+        ::icon(fa fa-chart-line)
+        Exploratory Data Analysis
+        ::icon(fa fa-table)
+        Data Transformation
+        ::icon(fa fa-shuffle)
+        Machine Learning
+        ::icon(fa fa-flask)
+        Teaching / Training
+        ::icon(fa fa-chalkboard-user)
+        Documentation
+        ::icon(fa fa-book)
+        Prototyping / Testing
+        ::icon(fa fa-vial-circle-check)
+        Triggering / Customizing Workflows
+        ::icon(fa fa-play)
+
+#!markdown
+
+![Mind Map: Why](../Images/MM_Why.png)

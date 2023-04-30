@@ -2,26 +2,22 @@
 
 - [ ] Resources web page
 - [ ] Welcome: QR Code for Link
-- [ ] Welcome Mind Map
+- [x] Welcome Mind Map
 - [ ] Discord Link to Resources
-- [ ] Cell Tags?
+- [ ] Update `Readme.md`
 
-- [ ] 02_Jupyter/00_Jupyter - Add Screenshots of various IDEs
-- [ ] 02_Jupyter/00_Jupyter - Add way of running Jupyter Notebook in Browser
-- [ ] 02_Jupyter/00_Jupyter - Add way of running Jupyter Labs in Browser
-- [ ] 02_Jupyter/00_Jupyter - Add screenshot of Azure Notebook
-- [ ] 02_Jupyter/01_CallingFunctions - Add a Function
-- [ ] 02_Jupyter/01_CallingFunctions - Call the function
-- [ ] 02_Jupyter/02_CallingScripts - Show the script
-- [ ] 02_Jupyter/02_CallingScripts - Call the script
-- [ ] 02_Jupyter/02_CallingScripts - Change and then re-call the script
-- [ ] 02_Jupyter/03_Packages - Show `%` to install
-- [ ] 02_Jupyter/03_Packages - Show `!` to install
-- [ ] 02_Jupyter/03_Packages - Talk about Anaconda
-- [ ] 02_Jupyter/04_Julia - Show Julia Code
-- [ ] 02_Jupyter/04_Julia - Talk about getting Julia Code to Run
-- [ ] 02_Jupyter/05_R - Show R Code
-- [ ] 02_Jupyter/05_R - Talk about getting R Code to Run
+- [x] 02_Jupyter/00_Jupyter - Add Screenshots of various IDEs
+- [x] 02_Jupyter/00_Jupyter - Add way of running Jupyter Notebook in Browser
+- [x] 02_Jupyter/00_Jupyter - Add way of running Jupyter Labs in Browser
+- [x] 02_Jupyter/00_Jupyter - Add screenshot of Azure Notebook
+- [x] 02_Jupyter/01_CallingFunctions - Add a Function
+- [x] 02_Jupyter/01_CallingFunctions - Call the function
+- [x] 02_Jupyter/02_CallingScripts - Show the script
+- [x] 02_Jupyter/02_CallingScripts - Call the script
+- [x] 02_Jupyter/02_CallingScripts - Change and then re-call the script
+- [x] 02_Jupyter/03_Packages - Show `%` to install
+- [x] 02_Jupyter/03_Packages - Show `!` to install
+- [x] 02_Jupyter/03_Packages - Talk about Anaconda
 
 - [ ] 03_Polyglot/00_Polyglot - Talk about what Polyglot Notebooks is
 - [ ] 03_Polyglot/01_CSharp - Show variable sharing
