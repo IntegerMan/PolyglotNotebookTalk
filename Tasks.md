@@ -48,14 +48,14 @@
 - [x] 03_Polyglot/12_Magic Commands - Talk about each magic command
 - [ ] 03_Polyglot/13_Extensions - Talk about extensibility and existing extensions
 
-- [ ] 04_UsageScenarios/01_PandasProcessing - Choose a CSV file
-- [ ] 04_UsageScenarios/01_PandasProcessing - Show Loading a CSV File
-- [ ] 04_UsageScenarios/01_PandasProcessing - Show Adding Columns
-- [ ] 04_UsageScenarios/01_PandasProcessing - Show Removing Columns
-- [ ] 04_UsageScenarios/01_PandasProcessing - Show Descriptive Statistics
-- [ ] 04_UsageScenarios/01_PandasProcessing - Show Grouping Columns
-- [ ] 04_UsageScenarios/01_PandasProcessing - Show Built-In Charts
-- [ ] 04_UsageScenarios/01_PandasProcessing - Show Export to CSV File
+- [x] 04_UsageScenarios/01_PandasProcessing - Choose a CSV file
+- [x] 04_UsageScenarios/01_PandasProcessing - Show Loading a CSV File
+- [x] 04_UsageScenarios/01_PandasProcessing - Show Adding Columns
+- [x] 04_UsageScenarios/01_PandasProcessing - Show Removing Columns
+- [x] 04_UsageScenarios/01_PandasProcessing - Show Descriptive Statistics
+- [x] 04_UsageScenarios/01_PandasProcessing - Show Grouping Columns
+- [x] 04_UsageScenarios/01_PandasProcessing - Show Built-In Charts
+- [x] 04_UsageScenarios/01_PandasProcessing - Show Export to CSV File
 - [ ] 04_UsageScenarios/02_DataVisualization - Load Git Data from CSV
 - [ ] 04_UsageScenarios/02_DataVisualization - Show Line Chart
 - [ ] 04_UsageScenarios/02_DataVisualization - Show Bar Chart

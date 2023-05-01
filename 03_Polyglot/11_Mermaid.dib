@@ -1,0 +1,44 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Mermaid Diagrams
+
+#!markdown
+
+![Mermaid Mindmap](../Images/MM_Mermaid.png)
+
+#!mermaid
+
+flowchart LR
+    c[Client]
+    s[Server]
+    db[Database]
+    
+    c -- HTTP GET --> s
+    s -- SQL Query --> db
+    db -. Result Set .-> s
+    s -. JSON .-> c
+
+#!mermaid
+
+erDiagram
+    COUNTRY ||--|{ STATE : "Has"
+    STATE ||--|{ CITY : "Has"
+    CITY ||--o| STATE : "Is capital of"
+    CITY ||--o| COUNTRY : "Is capital of"
+
+#!mermaid
+
+sequenceDiagram
+    actor C as Client
+    participant S as Server
+    participant DB as Database
+    C->>S: Login (Username, Password)
+    S->>DB: Select User Info
+    note over DB: Password is not stored in database
+    DB-->>S: Salt & Hash
+    S-->>C: 200 OK & JWT
+    note over C, S: Subsequent requests include JWT
