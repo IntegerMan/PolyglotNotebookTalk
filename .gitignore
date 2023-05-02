@@ -352,3 +352,5 @@ MigrationBackup/
 *.pkl
 
 04_UsageScenarios/Model.zip
+
+04_UsageScenarios/AzureCreds.json

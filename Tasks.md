@@ -69,7 +69,7 @@
 - [x] 04_UsageScenarios/04_MachineLearningDotnet - Show ML .NET and Titanic
 - [x] 04_UsageScenarios/05_InteractiveDocumentation - Show class documentation
 - [x] 04_UsageScenarios/06_Teaching - Show a sample tutorial on working with C# Strings
-- [ ] 04_UsageScenarios/07_TriggeringWorkflows - Make a `POST` request to a local endpoint OR trigger an automated ML workflow on Azure
+- [x] 04_UsageScenarios/07_TriggeringWorkflows - Call to Azure Cognitive Services
 - [x] 04_UsageScenarios/08_TryDotnet - Show how Microsoft uses Polyglot for Try .NET
 
 - [x] 05_Mermaid/_Index - Need a mind map
