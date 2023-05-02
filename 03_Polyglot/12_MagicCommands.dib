@@ -5,7 +5,7 @@
 #!markdown
 
 ## Magic Commands
-Polylgot Notebooks support **magic commands** that let you control the kernel, time execution, list variable values, and a few other meta-related things.
+Polyglot Notebooks support **magic commands** that let you control the kernel, time execution, list variable values, and a few other meta-related things.
 
 For example, the `#!about` magic command will tell you about your kernel
 

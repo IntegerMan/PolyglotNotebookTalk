@@ -1,0 +1,137 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Interactive Documentation
+
+I make no claims to authorship of this documentation. I asked Bing chat to generate this markdown and then I converted it to a `.dib` file.
+
+My point here is that documentation doesn't have to be static examples. We can have live code embedded in our documentation that others can play with.
+
+#!markdown
+
+### Lists in C#
+
+A `List` is a collection of objects that can be accessed by index. It is similar to an array, but it has some additional functionality that makes it more flexible.
+
+#!markdown
+
+#### Creating a List
+
+To create a `List`, you need to specify the type of objects that the `List` will contain. Here's an example of creating a `List` of `int` values:
+
+#!csharp
+
+List<int> numbers = new List<int>();
+
+numbers
+
+#!markdown
+
+You can also initialize a `List` with some values like this:
+
+#!csharp
+
+List<int> numbers = new List<int> { 1, 2, 3 };
+
+numbers
+
+#!markdown
+
+#### Adding and Removing Items
+
+You can add items to a `List` using the `Add()` method:
+
+#!csharp
+
+numbers.Add(4);
+
+numbers
+
+#!markdown
+
+You can also insert an item at a specific index using the `Insert()` method:
+
+#!csharp
+
+numbers.Insert(0, 0);
+
+numbers
+
+#!markdown
+
+To remove an item from a `List`, you can use the `Remove()` method:
+
+#!csharp
+
+numbers.Remove(1);
+
+numbers
+
+#!markdown
+
+Or you can remove an item at a specific index using the `RemoveAt()` method:
+
+#!csharp
+
+numbers.RemoveAt(0);
+
+numbers
+
+#!markdown
+
+#### Accessing Items
+
+You can access items in a `List` by index just like you would with an array:
+
+#!csharp
+
+int firstNumber = numbers[0];
+
+firstNumber
+
+#!markdown
+
+You can also use the `IndexOf()` method to find the index of an item in the `List`:
+
+#!csharp
+
+int index = numbers.IndexOf(2);
+
+index
+
+#!markdown
+
+#### Modifying Items
+
+You can modify items in a `List` by assigning a new value to an index:
+
+#!csharp
+
+numbers[0] = 5;
+
+numbers
+
+#!markdown
+
+#### Looping Through a List
+
+You can loop through a `List` using a `for` loop or a `foreach` loop:
+
+#!csharp
+
+// Looping with a loop
+for (int i = 0; i < numbers.Count; i++)
+{
+    Console.WriteLine(numbers[i]);
+}
+
+#!csharp
+
+// Looping using foreach
+foreach (int number in numbers)
+{
+    Console.WriteLine(number);
+}

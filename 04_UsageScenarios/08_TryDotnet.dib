@@ -1,0 +1,22 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Try .NET
+
+Microsoft uses the .NET Interactive kernel to power [Try .NET](https://dotnet.microsoft.com/en-us/platform/try-dotnet)
+
+![Try .NET Screenshot](../Images/TryDotnet.png)
+
+#!markdown
+
+---
+
+Can be embedded in any site via an IFrame and a GitHub Gist:
+
+``` html
+<iframe src="https://try.dot.net/?fromGist=df44833326fcc575e8169fccb9d41fc7">
+</iframe>
+```

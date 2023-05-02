@@ -56,24 +56,21 @@
 - [x] 04_UsageScenarios/01_PandasProcessing - Show Grouping Columns
 - [x] 04_UsageScenarios/01_PandasProcessing - Show Built-In Charts
 - [x] 04_UsageScenarios/01_PandasProcessing - Show Export to CSV File
-- [ ] 04_UsageScenarios/02_DataVisualization - Load Git Data from CSV
-- [ ] 04_UsageScenarios/02_DataVisualization - Show Line Chart
-- [ ] 04_UsageScenarios/02_DataVisualization - Show Bar Chart
-- [ ] 04_UsageScenarios/02_DataVisualization - Show Scatter Plot
-- [ ] 04_UsageScenarios/02_DataVisualization - Show 3D Scatter Plot
-- [ ] 04_UsageScenarios/02_DataVisualization - Show Box Plot
-- [ ] 04_UsageScenarios/02_DataVisualization - Show Histogram Plot
-- [ ] 04_UsageScenarios/02_DataVisualization - Show Treemap
-- [ ] 04_UsageScenarios/02_DataVisualization - Show Wheel Treemap
-- [ ] 04_UsageScenarios/03_MachineLearning - Show SciKitLearn and Titanic
-- [ ] 04_UsageScenarios/04_MachineLearningDotnet - Show ML .NET and Titanic
-- [ ] 04_UsageScenarios/05_InteractiveDocumentation - Show class instantiation
-- [ ] 04_UsageScenarios/05_InteractiveDocumentation - Show class behavior
-- [ ] 04_UsageScenarios/06_Prototyping - Show a class documentation
-- [ ] 04_UsageScenarios/06_Prototyping - Update a class with `partial`
+- [x] 04_UsageScenarios/02_DataVisualization - Load Git Data from CSV
+- [x] 04_UsageScenarios/02_DataVisualization - Show Line Chart
+- [x] 04_UsageScenarios/02_DataVisualization - Show Bar Chart
+- [x] 04_UsageScenarios/02_DataVisualization - Show Scatter Plot
+- [x] 04_UsageScenarios/02_DataVisualization - Show 3D Scatter Plot
+- [x] 04_UsageScenarios/02_DataVisualization - Show Box Plot
+- [x] 04_UsageScenarios/02_DataVisualization - Show Histogram Plot
+- [x] 04_UsageScenarios/02_DataVisualization - Show Treemap
+- [x] 04_UsageScenarios/02_DataVisualization - Show Wheel Treemap
+- [x] 04_UsageScenarios/03_MachineLearning - Show SciKitLearn and Titanic
+- [x] 04_UsageScenarios/04_MachineLearningDotnet - Show ML .NET and Titanic
+- [x] 04_UsageScenarios/05_InteractiveDocumentation - Show class documentation
+- [x] 04_UsageScenarios/06_Teaching - Show a sample tutorial on working with C# Strings
 - [ ] 04_UsageScenarios/07_TriggeringWorkflows - Make a `POST` request to a local endpoint OR trigger an automated ML workflow on Azure
-- [x] 04_UsageScenarios/08_Teaching - Show a sample tutorial on working with C# Strings
-- [ ] 04_UsageScenarios/08_TryDotnet - Show how Microsoft uses Polyglot for Try .NET
+- [x] 04_UsageScenarios/08_TryDotnet - Show how Microsoft uses Polyglot for Try .NET
 
 - [x] 05_Mermaid/_Index - Need a mind map
 

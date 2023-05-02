@@ -45,14 +45,24 @@ Now declare a string in a variable named `answer` and give it the value of `Hell
 #!csharp
 
 // Add NuGet Dependencies
-#r "nuget:Microsoft.NET.Test.Sdk"
-#r "nuget:xunit"
 #r "nuget:Shouldly"
+
+#!markdown
+
+---
+
+**The code below verifies your code for correctness. Do not modify this code.**
+
+---
 
 #!csharp
 
-using Xunit;
 using Shouldly;
 
-// The code below verifies your code for correctness. Do not modify this code.
-answer.ShouldBe("Hello Strings");
+try {
+    answer.ShouldBe("Hello Strings");
+    Console.WriteLine("Test Passed!");
+}
+catch (ShouldAssertException ex) {
+    Console.WriteLine(ex.Message);
+}
