@@ -27,13 +27,15 @@ bob
 
 ### Installing Libraries via NuGet
 
+With an internet connection you'd install NuGet Packages like this
+
 #!csharp
 
 #r "nuget:Bogus"
 
 #!markdown
 
-**Note:** If you have local packages you want to use, you can register them with the `#i` directive:
+If you have custom NuGet feeds you want to use, you can register them with the `#i` directive:
 
 ```
 #i "nuget:C:\myorg\mypackage\src\bin\Release"
@@ -47,6 +49,14 @@ You can also skip NuGet entirely and work with `.dll` files directly via syntax 
 ```
 
 ---
+
+#!markdown
+
+Since, I'm demoing this knowing Internet is going to be offline or spotty so let's use pre-stored DLL files instead for this talk.
+
+#!csharp
+
+#r "..\DLLs\Bogus.dll"
 
 #!csharp
 

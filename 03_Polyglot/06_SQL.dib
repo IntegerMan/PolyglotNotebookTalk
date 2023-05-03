@@ -16,7 +16,7 @@ First we need to import database libraries into Polyglot Notebooks
 
 #!csharp
 
-#r "nuget:Microsoft.DotNet.Interactive.SqlServer,*-*"
+#r "../DLLs/Microsoft.DotNet.Interactive.SqlServer.dll"
 
 #!markdown
 

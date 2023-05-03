@@ -49,7 +49,7 @@ Now declare a string in a variable named `answer` and give it the value of `Hell
 #!csharp
 
 // Add NuGet Dependencies
-#r "nuget:Shouldly"
+#r "../DLLs/Shouldly.dll"
 
 #!markdown
 

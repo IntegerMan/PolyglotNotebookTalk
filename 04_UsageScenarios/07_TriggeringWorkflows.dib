@@ -9,6 +9,8 @@ Notebooks can be used to configure and launch occasional manual tasks instead of
 
 This notebook analyzes an image on disk using Azure Cognitive Services and displays the results to the user
 
+**Warning:** Requires the conference WiFi and tethering gods to smile upon us.
+
 #!markdown
 
 ### Configuration Options
@@ -25,8 +27,8 @@ string filePath = Path.Combine(Environment.CurrentDirectory, "../Images/JesterKe
 
 #!csharp
 
-#r "nuget:Microsoft.Azure.CognitiveServices.Vision.ComputerVision"
-#r "nuget:Newtonsoft.Json"
+#r "../DLLs/Microsoft.Azure.CognitiveServices.Vision.ComputerVision.dll"
+#r "../DLLs/Newtonsoft.Json.dll"
 
 #!csharp
 
