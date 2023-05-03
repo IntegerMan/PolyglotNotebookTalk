@@ -6,9 +6,9 @@
 
 ## State Diagram / Finite State Machines (FSM)
 
-**TODO:** Link to article
+See [my article on State charts in Mermaid](https://newdevsguide.com/2023/04/18/mermaid-state-machine/) for more details.
 
-**TODO:** Embed a gif and/or video of boss encounter
+![Boss Fight](../Images/Boss.png)
 
 #!mermaid
 
