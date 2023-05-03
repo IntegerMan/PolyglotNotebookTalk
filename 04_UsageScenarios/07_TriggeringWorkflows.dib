@@ -15,6 +15,8 @@ This notebook analyzes an image on disk using Azure Cognitive Services and displ
 
 #!csharp
 
+using System.IO;
+
 string filePath = Path.Combine(Environment.CurrentDirectory, "../Images/JesterKeyboard.png");
 
 #!markdown
@@ -108,6 +110,13 @@ using (Stream imageStream = File.OpenRead(filePath)) {
 
 #!csharp
 
+using Microsoft.DotNet.Interactive.Formatting;
+Formatter.ListExpansionLimit = 5;
+
+analysis
+
+#!csharp
+
 // Display the primary caption and its confidence
 analysis.Description.Captions[0]
 
@@ -134,7 +143,3 @@ foreach (DetectedObject obj in analysis.Objects) {
     string bounds = $"{obj.Rectangle.X}, {obj.Rectangle.Y} by {obj.Rectangle.W}, {obj.Rectangle.H}";
     Console.WriteLine($"{obj.ObjectProperty} detected at {bounds} ({obj.Confidence:P} Confidence)");
 }
-
-#!csharp
-
-analysis
