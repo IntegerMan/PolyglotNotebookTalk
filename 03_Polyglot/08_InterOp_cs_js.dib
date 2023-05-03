@@ -1,0 +1,68 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## JavaScript and C# Interop
+
+Because JavaScript is still weird.
+
+#!markdown
+
+### What you CAN'T do: JS to JS or JS to C#
+
+#!javascript
+
+// JavaScript doesn't work quite the same way as the other languages in terms of variable sharing
+let jsVar = 42;
+
+jsVar // note: no output
+
+#!javascript
+
+let jsVar = 42;
+return jsVar;
+
+#!javascript
+
+// jsVar isn't available here
+jsVar
+
+#!csharp
+
+#!share --from javascript jsVar --as csVar
+// This also won't work because jsVar isn't a thing
+
+csVar
+
+#!markdown
+
+### What you CAN do: C# to JS
+
+#!csharp
+
+public class Point
+{
+    public int X {get; set;}
+    public int Y {get; set;}
+
+    public override string ToString() => $"Point ({X}, {Y})";
+}
+
+#!csharp
+
+Point p = new() { X = 4, Y = 2};
+p
+
+#!javascript
+
+#!set --value @csharp:p --name p
+
+console.log('X marks the spot. The spot is ' + p.X)
+
+#!markdown
+
+### My Thoughts
+
+I'm not sure if JS is what you ought to be using in a notebook yet. Python has similarities and JS can just run in your browser anyway.

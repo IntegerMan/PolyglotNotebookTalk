@@ -1,0 +1,86 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Combining C# and F#
+If you wanted to combine them, you now can!
+
+#!csharp
+
+public class Point
+{
+    public decimal X {get; init;}
+    public decimal Y {get; init;}
+
+    public override string ToString() => $"Point ({X}, {Y})";
+
+    public Point Scale(decimal factor) => new Point() { X = this.X * factor, Y = this.Y * factor};
+}
+
+#!csharp
+
+// We can create a variable of that class as seen before:
+Point p = new() { X = 4, Y = 2};
+p
+
+#!csharp
+
+// Just to test that the Scale method works:
+Point p2 = p.Scale(1.5m);
+p2
+
+#!markdown
+
+Next we'll share the C# variable with F# via the `#!set` command.
+
+Tip: This can be done using the variables view for easier times remembering the syntax.
+
+#!fsharp
+
+#!set --value @csharp:p --name pFSharp
+
+// Display the current value of P after it's been translated
+pFSharp
+
+#!fsharp
+
+// If that display looked a bit odd, there's a reason:
+pFSharp.GetType()
+
+#!fsharp
+
+// In order to get data out of it, you have to get its property out by name
+pFSharp.RootElement.GetProperty("X")
+
+#!markdown
+
+Additionally, methods are just not available, so `pFSharp.Scale` is nowhere to be found.
+
+#!markdown
+
+### F# to C#
+
+#!fsharp
+
+type Person(name: string, age: int) =
+    member this.Name = name
+    member this.Age = age
+
+let bilbo = Person("Bilbo Baggins", 111)
+bilbo
+
+#!markdown
+
+Now let's take our F# object and translate it to C#
+
+#!csharp
+
+#!set --value @fsharp:bilbo --name bilboCS
+
+bilboCS
+
+#!csharp
+
+bilboCS.GetType()

@@ -1,0 +1,17 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Powershell Support
+Powershell has full support for variable sharing and all of the standard Polyglot goodness. Here's using Powershell to talk to the Star Wars API
+
+#!pwsh
+
+$URL = "https://swapi.dev/api/planets/2"
+$METHOD = "GET"
+
+$RESPONSE = Invoke-RestMethod -Uri $URL -Method $METHOD
+
+$RESPONSE

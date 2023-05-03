@@ -1,0 +1,61 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Importing Code
+Because not all code you care about should live in one file.
+
+#!markdown
+
+### Importing Code Files
+
+Let's import a `Person` class defined in `Person.cs`:
+
+#!csharp
+
+#!import Person.cs
+
+#!csharp
+
+Person bob = new() { First = "Bob", Last = "Builder"};
+
+bob
+
+#!markdown
+
+### Installing Libraries via NuGet
+
+#!csharp
+
+#r "nuget:Bogus"
+
+#!markdown
+
+**Note:** If you have local packages you want to use, you can register them with the `#i` directive:
+
+```
+#i "nuget:C:\myorg\mypackage\src\bin\Release"
+#r "nuget:MyOrg.MyPackage"
+```
+
+You can also skip NuGet entirely and work with `.dll` files directly via syntax like this:
+
+```
+#r 'folder/myAssembly.dll'
+```
+
+---
+
+#!csharp
+
+using Bogus;
+
+var faker = new Faker<Person>()
+    .RuleFor(p => p.First, (f, p) => f.Name.FirstName())
+    .RuleFor(p => p.Last, (f, p) => f.Name.LastName())
+    .RuleFor(p => p.Phone, (f, p) => f.Phone.PhoneNumber())
+    .RuleFor(p => p.Email, (f, p) => f.Internet.Email(p.First, p.Last));
+
+faker.Generate()

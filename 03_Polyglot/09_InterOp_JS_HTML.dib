@@ -1,0 +1,50 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## What's JS good at in Polyglot Notebooks?
+
+JavaScript is good at adding additional interactivity and flare to your page or using libraries like D3.js
+
+#!markdown
+
+## HTML and JavaScript
+Here's some basic HTML in a notebook
+
+#!markdown
+
+<p>This is <span style="color: magenta; text-decoration: underline; font-weight: bold;">HTML</span>!</p>
+
+<button>This button does absolutely nothing, but it is a button</button>
+
+#!markdown
+
+### Rendering Content with D3 JS
+Example taken from [Polyglot Notebooks documentation](https://github.com/dotnet/interactive/blob/main/samples/notebooks/javascript/D3.js%20with%20import.ipynb)
+
+#!html
+
+<svg id="d3_target"></svg>
+
+#!javascript
+
+d3 = await import("https://cdn.jsdelivr.net/npm/d3@7/+esm");
+
+const width = 400;
+const height = 400;
+const svg = d3.select("#d3_target");
+
+svg
+  .attr("width", width)
+  .attr("height", 400)
+  .attr("viewBox", [0, 0, width, height])
+  .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+
+svg
+  .append("circle")
+  .attr("fill", "steelblue")
+  .attr("cx", width/2)
+  .attr("cy", height/2)
+  .attr("r", "100");

@@ -102,8 +102,6 @@ using (Stream imageStream = File.OpenRead(filePath)) {
     analysis = await client.AnalyzeImageInStreamAsync(imageStream, features);
 }
 
-analysis.RequestId
-
 #!markdown
 
 ### Exploring the Analysis Results

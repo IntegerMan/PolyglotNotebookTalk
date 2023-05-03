@@ -1,0 +1,107 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"},{"aliases":[],"languageName":"T-SQL","name":"sql-mydatabase"},{"aliases":[],"languageName":"T-SQL","name":"sql-polyglot_examples"}]}}
+
+#!markdown
+
+## SQL and KQL
+
+Allowing you to use live data in a Polyglot Notebook
+
+#!markdown
+
+### Connecting to a Database
+
+First we need to import database libraries into Polyglot Notebooks
+
+#!csharp
+
+#r "nuget:Microsoft.DotNet.Interactive.SqlServer,*-*"
+
+#!markdown
+
+Next we connect to the database via a connection string.
+
+This assumes the database was already created on a local SQLExpress instance by following the `dbSetup.sql` file.
+
+#!csharp
+
+#!connect mssql --kernel-name polyglot_examples "Persist Security Info=False; Integrated Security=true; Encrypt=False; Initial Catalog=PolyglotNotebookExamples; Server=localhost\SQLEXPRESS"
+
+#!sql
+
+#!sql-polyglot_examples --name sqlJokes
+SELECT TOP 5
+    j.joke, 
+    j.punchline 
+FROM 
+    dad_jokes j
+ORDER BY 
+    j.joke,
+    j.punchline
+
+#!markdown
+
+### Sharing Query Data between Languages
+Because Polyglot is all about sharing, you can share query results from SQL to C# and other languages
+
+#!csharp
+
+#!share --from sql-polyglot_examples sqlJokes
+sqlJokes
+
+#!csharp
+
+sqlJokes.GetType()
+
+#!csharp
+
+using Microsoft.DotNet.Interactive.Formatting.TabularData;
+
+TabularDataResource table = sqlJokes.First();
+table
+
+#!csharp
+
+table.Data.First()
+
+#!csharp
+
+using System.Collections.Generic;
+
+// You can get at the indivual rows by looping over the data and then finding the key value pairs by key name.
+// There's probably a way to get this into a more natural dictionary, but I've not found it yet
+foreach (List<KeyValuePair<string, object>> row in table.Data) {
+    string joke = row.Find(r => r.Key == "joke").Value.ToString();
+    string punchline = row.Find(r => r.Key == "punchline").Value.ToString();
+
+    Console.WriteLine(joke);
+    Console.WriteLine("... " + punchline);
+    Console.WriteLine();
+}
+
+#!markdown
+
+**Moral of the story:** Polyglot Notebooks is not a replacement for Entity Framework or Dapper, but it can let you run little experiments.
+
+#!markdown
+
+### A note on KQL
+
+Polyglot Notebooks supports Kusto Query Language (KQL), however your presenter's current knowledge does not.
+
+A sample KQL statement would look like this:
+
+``` kql
+#!kql-polyglot_examples --name kqlErrors
+
+logs
+| where severity == "error"
+| project timestamp, message
+```
+
+#!markdown
+
+This would run a Kusto Query Language statement against an established connection named `polyglot-examples` and display the results in a similar manner to a SQL statement.
+
+You can read more about KQL support in the [official documentation](https://github.com/dotnet/interactive/blob/main/docs/working-with-data.md).

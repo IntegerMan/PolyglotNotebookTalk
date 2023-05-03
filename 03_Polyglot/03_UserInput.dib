@@ -1,0 +1,41 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## User Input
+For when you really want the user to have to respond to prompts.
+
+#!csharp
+
+using Microsoft.DotNet.Interactive;
+
+// Prompt the user to enter a username
+string username = await Kernel.GetInputAsync("Enter your username");
+username = username.ToLowerInvariant();
+
+#!csharp
+
+// Prompt the user to enter a password (securely)
+string password = await Kernel.GetPasswordAsync("Enter your password");
+// Note: this might be suitable for use with API Keys in some settings
+
+#!markdown
+
+**Disclaimer:** this talk is not about auth and this authentication code is literally a joke. Do not actually use this.
+
+#!csharp
+
+// IMPORTANT NOTE: The authentication code below is a joke. Do not implement this.
+string message = username switch {
+    "integerman" when password == "FuzzyBunny" => "You're in. Don't look in your variables pane.",
+    "integerman" => $"I'm sorry, but IntegerMan's password is 'FuzzyBunny', not '{password}'",
+    _ => $"I'm sorry, but the password '{password}' belongs to 'noobslayer69' and cannot be used by your username."
+};
+
+message
+
+#!markdown
+
+**Shameless Plug for a friend:** Seth Petry-Johnson is giving [a talk](https://stirtrek.com/speakers/2023/Seth-Petry-Johnson.html#abstract) this afternoon at **2:15** on Auth in the **Gamora** theater if you want examples of actual authorization and authentication.

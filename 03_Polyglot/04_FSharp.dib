@@ -1,0 +1,84 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## F# - Functional Programming in a Notebook
+
+In general, this works just like F# Interactive, but in a notebook. You get all the same support you had in C# with NuGet, importing, and variables, but you're using F# syntax.
+
+#!fsharp
+
+open System
+
+// Random number generator
+let rand = new Random()
+
+#!markdown
+
+### Random Capitalizer
+This function takes in a string and transforms it to random capitalization so that "Hello" might become "heLlO"
+
+#!fsharp
+
+let randomCase (input: string) =
+    input.ToCharArray()
+    |> Array.map (fun c -> if rand.Next(2) = 0 then Char.ToUpper(c) else Char.ToLower(c))
+    |> String.Concat
+
+#!fsharp
+
+randomCase "Hello World"
+
+#!markdown
+
+### Leet Speak Generator
+Because why not bring that back?
+
+Transforms a string like "Cake" into the perfectly understandable "c4k3"
+
+#!fsharp
+
+let leetSpeak (input: string) =
+    let replacements = Map.ofList [('a', '4'); ('e', '3'); ('l', '1'); ('o', '0'); ('s', '5'); ('t', '7')]
+    input.ToCharArray()
+    |> Array.map (fun c ->
+        let lowerC = Char.ToLower(c)
+        if replacements.ContainsKey(lowerC) then replacements.[lowerC] else c)
+    |> String.Concat
+
+#!fsharp
+
+leetSpeak "Hello Stir Trek. I'm so sorry for what I've done."
+
+#!markdown
+
+### Lorem Ipsum Generator
+
+This function generates "lorem ipsum" text up to length characters long
+
+#!fsharp
+
+let loremIpsum (length: int) =
+    let words = ["lorem"; "ipsum"; "dolor"; "sit"; "amet"; "consectetur"; "adipiscing"; "elit"]
+    let rec loop n acc =
+        if n <= 0 then acc
+        else
+            let word = words.[rand.Next(words.Length)]
+            loop (n - word.Length - 1) (acc + " " + word)
+    loop length ""
+
+#!fsharp
+
+loremIpsum 140
+
+#!markdown
+
+## Function Chaining
+
+Because when you're doing F#, you sort of have to chain together functions or it doesn't count. It's like a law.
+
+#!fsharp
+
+loremIpsum 140 |> leetSpeak |> randomCase

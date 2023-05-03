@@ -1,0 +1,55 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Extending Polyglot Notebooks
+
+#!markdown
+
+### Formatting
+
+The formatter allows you to display custom HTML for any Type you want to display as the result of a cell.
+
+This example, taken from [Polyglot Notebooks documentation](https://github.com/dotnet/interactive/blob/main/docs/formatting.md), shows configuring the `Formatter` to render `System.Drawing.Rectangle` objects as rectangles using SVG instead of just listing their properties.
+
+#!csharp
+
+using System.Drawing;
+using Microsoft.DotNet.Interactive.Formatting;
+
+#!csharp
+
+Rectangle rect = new() { X=0, Y=0, Width=200, Height=100};
+
+// This is the default appearance of a rectangle
+rect
+
+#!csharp
+
+// Any subsequent renderings of the Redctangle class now use this styling
+Formatter.Register<Rectangle>(
+    rect => $"""
+         <svg width="100" height="100">
+           <rect width="{rect.Width}" 
+                 height="{rect.Height}" 
+                 style="fill:rgb(0,255,200)" />
+         </svg>
+         """, 
+    mimeType: "text/html");
+
+// This will follow the new styling
+rect
+
+#!markdown
+
+### Polyglot Notebooks Extensions
+
+You can also author custom magic commands using dotnet that allow you to register magic commands of your own or default formatters as seen with the [Polyglot Notebooks Clock Sample](https://github.com/dotnet/interactive/blob/main/docs/extending-dotnet-interactive.md)
+
+![Clock Magic Command](../Images/ClockExtension.png)
+
+Which has been registered as a handler for `DateTime` and `DateTimeOffset` instances:
+
+![Clock Formatter](../Images/ClockExtension.png)

@@ -1,0 +1,70 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## C# Code in Notebooks
+
+#!markdown
+
+### Variables
+
+#!csharp
+
+string message = "Hello Stir Trek";
+
+message // Note: do not put a semicolon on the last line if you want to get its value displayed
+
+#!csharp
+
+// Variable sharing works fine
+message += " but in the console this time";
+Console.WriteLine(message);
+
+#!markdown
+
+Reminder: take a look at the Polyglot Notebooks Variables pane.
+
+#!markdown
+
+### Classes
+
+Note: Custom namespaces and `partial` classes are not supported. Classes exist in the global namespace.
+
+#!csharp
+
+public class Point
+{
+    public Point(int x, int y) {
+        this.X = x;
+        this.Y = y;
+    }
+
+    public int X {get; set;}
+    public int Y {get; set;}
+}
+
+#!csharp
+
+Point myPoint = new(4, 2);
+
+myPoint
+
+#!markdown
+
+### Defining Local Methods
+
+If you don't need a class but want to define a method / function, you can do that.
+
+#!csharp
+
+int CalculateFavoriteNumber() {
+    return 40 + 2;
+}
+
+#!csharp
+
+int num = CalculateFavoriteNumber();
+
+num
