@@ -29,6 +29,7 @@ string filePath = Path.Combine(Environment.CurrentDirectory, "../Images/JesterKe
 
 #r "../DLLs/Microsoft.Azure.CognitiveServices.Vision.ComputerVision.dll"
 #r "../DLLs/Newtonsoft.Json.dll"
+#r "../DLLs/Microsoft.Rest.ClientRuntime.dll"
 
 #!csharp
 
@@ -145,3 +146,19 @@ foreach (DetectedObject obj in analysis.Objects) {
     string bounds = $"{obj.Rectangle.X}, {obj.Rectangle.Y} by {obj.Rectangle.W}, {obj.Rectangle.H}";
     Console.WriteLine($"{obj.ObjectProperty} detected at {bounds} ({obj.Confidence:P} Confidence)");
 }
+
+#!markdown
+
+### In Case of Internet Outage...
+
+Here are the raw results
+
+![Raw Results](../Images/CogServicesResult1.png)
+
+The next few experiments
+
+![Raw Results](../Images/CogServicesResult2.png)
+
+The final 3 experiments
+
+![Raw Results](../Images/CogServicesResult3.png)
