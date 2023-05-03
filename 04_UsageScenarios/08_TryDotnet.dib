@@ -6,7 +6,7 @@
 
 ## Try .NET
 
-Microsoft uses the .NET Interactive kernel to power [Try .NET](https://dotnet.microsoft.com/en-us/platform/try-dotnet)
+Microsoft is working to convert [Try .NET](https://dotnet.microsoft.com/en-us/platform/try-dotnet) to use the .NET Interactive kernel so people can try .NET in the browser in a notebook.
 
 ![Try .NET Screenshot](../Images/TryDotnet.png)
 

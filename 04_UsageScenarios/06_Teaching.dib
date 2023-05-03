@@ -4,13 +4,17 @@
 
 #!markdown
 
-## Strings in dotnet
+## Teaching with Polyglot
+
+The short feedback loop and ways of looking at variables can be ideal for teaching and training newer developers.
+
+### Strings in dotnet
 
 This interactive exercise will help you understand strings and common string operations in dotnet.
 
 #!markdown
 
-### Declaring Strings
+#### Declaring Strings
 Strings are any sequence of *characters* making up a larger word, sentence, paragraph, or larger bodies of text.
 
 Dotnet, like other programming languages, organizes strings as array of characters with special methods that make strings easier to work with.
