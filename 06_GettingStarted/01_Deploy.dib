@@ -1,0 +1,90 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Deploying Notebooks
+
+#!markdown
+
+### Option 1: Don't
+
+Have your notebooks run locally on everyone's machines. Make this part of your training process.
+
+#!markdown
+
+### Option 2: Use GitHub.dev
+
+This allows you to run VS Code in your browser for a project. Just got to `github.dev` instead of `github.com` or type `.` on GitHub.com while logged in.
+
+Example: [this repository](https://github.dev/IntegerMan/PolyglotNotebookTalk)
+
+Downsides: Doesn't support Polyglot Notebooks yet.
+
+#!markdown
+
+### Option 3: Use GitHub CodeSpaces
+
+[GitHub CodeSpaces](https://code.visualstudio.com/docs/remote/codespaces) allows you to run notebooks in the cloud using pre-configured compute resources.
+
+Downside would be setup.
+
+#!markdown
+
+### Option 4: Deploy a Jupyter Notebooks Server
+
+This can be done by following the [Jupyter documentation](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html). Other commercial hosting solutions such as Anaconda may also work.
+
+---
+
+The **.NET Interactive** kernel can be installed into a Jupyter Notebook directly which would allow some of the features present in VS Code.
+
+See the [Official Documentation](https://github.com/dotnet/interactive/blob/main/docs/NotebookswithJupyter.md) for full steps, but the key step is to run:
+
+`dotnet tool install -g Microsoft.dotnet-interactive`
+
+followed by:
+
+`dotnet interactive jupyter install`
+
+#!markdown
+
+### Option 5: Deploying Jupyter Notebooks to Azure
+These are easy to share with standard Jupyter Notebooks, however I have not yet verified that they can run Jupyter.
+
+![Azure Notebook](../Images/AzureMLNotebook.png)
+
+#!markdown
+
+#### 1. Create an Azure Machine Learning Studio Instance
+
+**Tips:**
+
+- I recommend using a new dedicated resource group for this resource
+- Don't create an Azure Container Registry until you need one (you won't for notebooks)
+
+#!markdown
+
+#### 2. Create a Compute Instance
+
+This is the compute resource that will run your notebook
+
+**Tips:**
+- Make sure you set it to auto-shutoff if left inactive!
+- You don't need something with a ton of capabilities for most tasks
+- You can have multiple of these if you need to swap tiers
+
+#!markdown
+
+#### 3. Create a Notebook
+
+You can add a new notebook or upload an existing one
+
+You cannot work with `.dib` files or Polyglot Notebooks at present
+
+#!markdown
+
+#### 4. Share with your Colleagues!
+
+Standard Azure RBAC controls may be applied
