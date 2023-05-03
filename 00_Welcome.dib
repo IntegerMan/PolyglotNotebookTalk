@@ -17,33 +17,11 @@ Instructor at [Tech Elevator](https://TechElevator.com) & [Microsoft MVP](https:
 
 **Code for this talk available at [https://GitHub.com/IntegerMan/PolyglotNotebookTalk](https://GitHub.com/IntegerMan/PolyglotNotebookTalk)**
 
-**TODO:** QR Code for link
+![QR Code](images/QR.png)
 
 #!markdown
 
 ## Structure of this Talk
-
-#!mermaid
-
-mindmap
-    This Talk
-    ::icon(fa fa-person-chalkboard)
-        {{What are Notebooks?}}
-        ::icon(fa fa-book)
-            Jupyter Notebooks
-            ::icon(fa fa-rocket)
-            Polyglot Notebooks
-            ::icon(fa fa-share-alt)
-        {{When would you use them?}}
-        ::icon(fa fa-question)
-            Sample Uses of Notebooks
-            ::icon(fa fa-hammer)
-        {{Diagrams in Notebooks}}
-        ::icon(fa fa-arrow-right)
-        {{Deploying Notebooks}}
-        ::icon(fa fa-upload)
-        {{Getting Started}}
-        ::icon(fa fa-play)
 
 #!markdown
 
