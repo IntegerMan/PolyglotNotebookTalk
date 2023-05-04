@@ -12,15 +12,13 @@
 
 #!csharp
 
-string message = "Hello Stir Trek";
+DateTime when = DateTime.Now;
 
-message // Note: do not put a semicolon on the last line if you want to get its value displayed
+when.ToShortDateString()
 
 #!csharp
 
-// Variable sharing works fine
-message += " but in the console this time";
-Console.WriteLine(message);
+Console.WriteLine(when);
 
 #!markdown
 
@@ -43,13 +41,17 @@ public class Point
 
     public int X {get; set;}
     public int Y {get; set;}
+    public int Z {get; set;}
+
+    public override string ToString() => $"Point({X}, {Y})";
 }
 
 #!csharp
 
-Point myPoint = new(4, 2);
+// Instantiate the class
+Point p = new(4,2);
 
-myPoint
+p
 
 #!markdown
 
@@ -59,12 +61,12 @@ If you don't need a class but want to define a method / function, you can do tha
 
 #!csharp
 
-int CalculateFavoriteNumber() {
-    return 40 + 2;
+// Define a local method
+public int CalculateFavoriteNumber() {
+    return 42;
 }
 
 #!csharp
 
-int num = CalculateFavoriteNumber();
-
-num
+// Call the local method
+CalculateFavoriteNumber()

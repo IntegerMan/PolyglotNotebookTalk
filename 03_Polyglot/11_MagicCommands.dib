@@ -15,6 +15,18 @@ For example, the `#!about` magic command will tell you about your kernel
 
 #!markdown
 
+`#!who` and `#!whos` are both interesting commands to explore variables.
+
+#!csharp
+
+// Declare a variable here
+
+#!csharp
+
+#!who
+
+#!markdown
+
 Magic commands can be listed via the `#!lsmagic` magic command
 
 #!csharp
@@ -24,11 +36,12 @@ Magic commands can be listed via the `#!lsmagic` magic command
 #!csharp
 
 #!time
-// Let's declare a few variables to try this out
-string month = "May";
-int day = 5;
-int year = 2023;
 
-#!csharp
+const int MAX_X = 10000;
+const int MAX_Y = 1000;
 
-#!whos
+for (int x = 0; x < MAX_X; x++) {
+    for (int y = 0; y < MAX_Y; y++) {
+         // Do nothing
+    }
+}

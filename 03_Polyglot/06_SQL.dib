@@ -14,9 +14,13 @@ Allowing you to use live data in a Polyglot Notebook
 
 First we need to import database libraries into Polyglot Notebooks
 
+**Warning:** this part does require an internet connection in order to install the required extensions into Polyglot automatically.
+
+May conference WiFi and tethering have mercy on our souls.
+
 #!csharp
 
-#r "../DLLs/Microsoft.DotNet.Interactive.SqlServer.dll"
+#r "nuget: Microsoft.DotNet.Interactive.SqlServer, *-*"
 
 #!markdown
 
@@ -24,9 +28,13 @@ Next we connect to the database via a connection string.
 
 This assumes the database was already created on a local SQLExpress instance by following the `dbSetup.sql` file.
 
-#!csharp
+#!sql
 
 #!connect mssql --kernel-name polyglot_examples "Persist Security Info=False; Integrated Security=true; Encrypt=False; Initial Catalog=PolyglotNotebookExamples; Server=localhost\SQLEXPRESS"
+
+#!markdown
+
+Note: if you re-run the above cell you get an ugly error since the SQL kernel already exists
 
 #!sql
 

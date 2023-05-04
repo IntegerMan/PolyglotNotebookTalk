@@ -14,7 +14,7 @@ public class Point
     public decimal X {get; init;}
     public decimal Y {get; init;}
 
-    public override string ToString() => $"Point ({X}, {Y})";
+    public override string ToString() => $"Point({X}, {Y})";
 
     public Point Scale(decimal factor) => new Point() { X = this.X * factor, Y = this.Y * factor};
 }
@@ -46,7 +46,7 @@ pFSharp
 
 #!fsharp
 
-// If that display looked a bit odd, there's a reason:
+// Show the type of this variable
 pFSharp.GetType()
 
 #!fsharp

@@ -15,13 +15,14 @@ Let's import a `Person` class defined in `Person.cs`:
 
 #!csharp
 
-#!import Person.cs
+#!import 02_Person.cs
 
 #!csharp
 
-Person bob = new() { First = "Bob", Last = "Builder"};
+// Instantate the Person class here
+Person p = new Person();
 
-bob
+p
 
 #!markdown
 

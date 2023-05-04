@@ -15,9 +15,9 @@ Here's some basic HTML in a notebook
 
 #!markdown
 
-<p>This is <span style="color: magenta; text-decoration: underline; font-weight: bold;">HTML</span>!</p>
+Click into this cell to check it out.
 
-<button>This button does absolutely nothing, but it is a button</button>
+<p>This is <span style="color: magenta; text-decoration: underline; font-weight: bold;">HTML</span>!</p>
 
 #!markdown
 

@@ -45,11 +45,7 @@ Now declare a string in a variable named `answer` and give it the value of `Hell
 
 // Declare a variable named answer with the value of Hello Strings.
 // You do not need to write this to the console, but may if you wish
-
-#!csharp
-
-// Add NuGet Dependencies
-#r "../DLLs/Shouldly.dll"
+string answer = "What?";
 
 #!markdown
 
@@ -61,12 +57,11 @@ Now declare a string in a variable named `answer` and give it the value of `Hell
 
 #!csharp
 
-using Shouldly;
-
-try {
-    answer.ShouldBe("Hello Strings");
-    Console.WriteLine("Test Passed!");
-}
-catch (ShouldAssertException ex) {
-    Console.WriteLine(ex.Message);
+if (answer == "Hello Strings") 
+{
+    Console.WriteLine("✅ Test Passed!");
+} 
+else 
+{
+    Console.WriteLine($"❌ answer should have been 'Hello Strings' but was instead '{answer}'");
 }

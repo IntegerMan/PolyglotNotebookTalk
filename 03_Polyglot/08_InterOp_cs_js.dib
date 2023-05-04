@@ -22,6 +22,7 @@ jsVar // note: no output
 #!javascript
 
 let jsVar = 42;
+
 return jsVar;
 
 #!javascript

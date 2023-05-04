@@ -27,10 +27,6 @@ let randomCase (input: string) =
     |> Array.map (fun c -> if rand.Next(2) = 0 then Char.ToUpper(c) else Char.ToLower(c))
     |> String.Concat
 
-#!fsharp
-
-randomCase "Hello World"
-
 #!markdown
 
 ### Leet Speak Generator
@@ -48,10 +44,6 @@ let leetSpeak (input: string) =
         if replacements.ContainsKey(lowerC) then replacements.[lowerC] else c)
     |> String.Concat
 
-#!fsharp
-
-leetSpeak "Hello Stir Trek. I'm so sorry for what I've done."
-
 #!markdown
 
 ### Lorem Ipsum Generator
@@ -68,10 +60,6 @@ let loremIpsum (length: int) =
             let word = words.[rand.Next(words.Length)]
             loop (n - word.Length - 1) (acc + " " + word)
     loop length ""
-
-#!fsharp
-
-loremIpsum 140
 
 #!markdown
 

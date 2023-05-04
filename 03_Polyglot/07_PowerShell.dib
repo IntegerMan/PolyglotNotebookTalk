@@ -15,3 +15,16 @@ $METHOD = "GET"
 $RESPONSE = Invoke-RestMethod -Uri $URL -Method $METHOD
 
 $RESPONSE
+
+#!markdown
+
+Internet connection have you down? The local API is here to help.
+
+#!pwsh
+
+$URL = "https://localhost:7041/iam"
+$METHOD = "DELETE"
+
+$RESPONSE = Invoke-RestMethod -Uri $URL -Method $METHOD
+
+$RESPONSE

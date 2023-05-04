@@ -21,20 +21,17 @@ username = username.ToLowerInvariant();
 string password = await Kernel.GetPasswordAsync("Enter your password");
 // Note: this might be suitable for use with API Keys in some settings
 
+#!csharp
+
+#!import 03_Validator.cs
+
+Auth.ValidateLogin(username, password)
+
 #!markdown
 
 **Disclaimer:** this talk is not about auth and this authentication code is literally a joke. Do not actually use this.
 
-#!csharp
-
-// IMPORTANT NOTE: The authentication code below is a joke. Do not implement this.
-string message = username switch {
-    "integerman" when password == "FuzzyBunny" => "You're in. Don't look in your variables pane.",
-    "integerman" => $"I'm sorry, but IntegerMan's password is 'FuzzyBunny', not '{password}'",
-    _ => $"I'm sorry, but the password '{password}' belongs to 'noobslayer69' and cannot be used by your username."
-};
-
-message
+---
 
 #!markdown
 
