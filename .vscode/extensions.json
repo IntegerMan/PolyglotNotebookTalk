@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "ms-dotnettools.dotnet-interactive-vscode",
-        "ms-toolsai.jupyter"
+        "ms-toolsai.jupyter",
+        "msrvida.vscode-sanddance"
     ]
 }

@@ -12,7 +12,7 @@ This document contains high-level concepts useful for understanding Notebooks.
 
 ### What is a Notebook?
 
-![Notebook Concepts Art](../Images/ArtNotebookConcepts.png)
+![Notebook Concepts Art](Images/ArtNotebookConcepts.png)
 
 Notebooks are collections of **cells** that are either **code** or **markdown** cells.
 
@@ -24,7 +24,7 @@ This means the notebook itself is a **new form of interactive application**.
 
 ### What is a Kernel?
 
-![Notebook Kernel Concept Art](../Images/ArtCogs.png)
+![Notebook Kernel Concept Art](Images/ArtCogs.png)
 
 A kernel is a programming language specific process that interacts with the Notebook to execute code and output results.
 
@@ -32,7 +32,7 @@ Different kernels can support different programming languages.
 
 In **VS Code** you must select which kernel your Notebook runs.
 
-![Selecting a Kernel in VS Code](../Images/SelectKernel.png)
+![Selecting a Kernel in VS Code](Images/SelectKernel.png)
 
 Some kernels include:
 
@@ -47,7 +47,7 @@ Some kernels include:
 
 #!markdown
 
-![Notebook Formats](../Images/TL_NotebookFormats.png)
+![Notebook Formats](Images/TL_NotebookFormats.png)
 
 **.ipynb** files are notebook files that *store the code and its prior results* so they don't need to be re-run. These tend to be larger files.
 
@@ -59,4 +59,4 @@ Some kernels include:
 
 #!markdown
 
-![Mind Map: Why](../Images/MM_Why.png)
+![Mind Map: Why](Images/MM_Why.png)

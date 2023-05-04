@@ -41,15 +41,3 @@ Formatter.Register<Rectangle>(
 
 // This will follow the new styling
 rect
-
-#!markdown
-
-### Polyglot Notebooks Extensions
-
-You can also author custom magic commands using dotnet that allow you to register magic commands of your own or default formatters as seen with the [Polyglot Notebooks Clock Sample](https://github.com/dotnet/interactive/blob/main/docs/extending-dotnet-interactive.md)
-
-![Clock Magic Command](../Images/ClockExtension.png)
-
-Which has been registered as a handler for `DateTime` and `DateTimeOffset` instances:
-
-![Clock Formatter](../Images/ClockExtension.png)

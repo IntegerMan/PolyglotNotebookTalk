@@ -32,13 +32,13 @@ Example taken from [Polyglot Notebooks documentation](https://github.com/dotnet/
 
 d3 = await import("https://cdn.jsdelivr.net/npm/d3@7/+esm");
 
-const width = 400;
-const height = 400;
+const width = 200;
+const height = 200;
 const svg = d3.select("#d3_target");
 
 svg
   .attr("width", width)
-  .attr("height", 400)
+  .attr("height", height)
   .attr("viewBox", [0, 0, width, height])
   .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
 
@@ -47,4 +47,4 @@ svg
   .attr("fill", "steelblue")
   .attr("cx", width/2)
   .attr("cy", height/2)
-  .attr("r", "100");
+  .attr("r", "75");
