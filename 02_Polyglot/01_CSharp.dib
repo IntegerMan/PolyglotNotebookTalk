@@ -31,6 +31,7 @@ public class Point
 
     public int X {get; set;}
     public int Y {get; set;}
+    public int Z {get; set;}
 
     public override string ToString() => $"Point({X}, {Y})";
 }
@@ -38,6 +39,9 @@ public class Point
 #!csharp
 
 // Instantiate the class
+Point p = new(4, 2);
+
+p
 
 #!markdown
 
@@ -48,7 +52,11 @@ If you don't need a class but want to define a method / function, you can do tha
 #!csharp
 
 // Define a local method
+int CalculateFavoriteNumber() {
+    return 42;
+}
 
 #!csharp
 
 // Call the local method
+CalculateFavoriteNumber()

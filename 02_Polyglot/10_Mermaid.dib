@@ -42,3 +42,75 @@ sequenceDiagram
     DB-->>S: Salt & Hash
     S-->>C: 200 OK & JWT
     note over C, S: Subsequent requests include JWT
+
+#!mermaid
+
+%%{init: { 'theme': 'base' } }%%
+gitGraph
+    commit tag: "v0.4.0"
+    branch feature
+    checkout main
+        commit
+    branch bugfix
+        commit
+    checkout feature
+        commit id: "Dark Theme"
+    checkout main
+        merge feature
+        commit tag: "v0.4.1"
+        commit
+    checkout bugfix
+        commit id: "Fixed Null Ref"
+    checkout main
+        merge bugfix tag: "v0.4.2"
+    commit
+
+#!mermaid
+
+gantt
+    title Write about Mermaid.js Gantt Charts
+    Create code for Gantt chart     : 2023-04-11, 2d
+    Outline article on Gantt charts : 2023-04-12, 2d
+    Write article on Gantt charts   : 2023-04-13, 1d
+    Publish article on Gantt charts : 2023-04-14, 1d
+
+#!mermaid
+
+stateDiagram-v2
+    direction LR
+    
+    state intro {
+        [*] --> Descending
+        Descending --> Roar
+        Roar --> [*]
+    }
+    state combat {
+        [*] --> Attacking
+        Attacking --> Pain
+        Pain --> Attacking
+    }
+    state defeated {
+        [*] --> Dying
+        Dying --> Dead
+        Dead --> [*]
+    }
+
+    [*] --> intro
+    intro --> combat
+    combat --> defeated
+    defeated --> [*]
+
+#!mermaid
+
+journey
+    title Attend a Tech Conference
+    section Pre-Conference
+        Buy a Ticket: 4: Attendees, Web Site
+        Check Schedule before Conference: 3: Attendees, Web Site
+    section Morning
+        Check in at Conference: 5: Attendees, Volunteers
+        Attend Talk: 5: Attendees, Speakers, Volunteers
+    section Afternoon
+        Lunch: 4: Attendees, Volunteers
+        "Hallway Track": 5: Attendees, Volunteers
+        Post-Conference Movie: 7: Attendees, Volunteers, Speakers

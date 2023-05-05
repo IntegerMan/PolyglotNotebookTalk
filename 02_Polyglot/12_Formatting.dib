@@ -21,7 +21,7 @@ using Microsoft.DotNet.Interactive.Formatting;
 
 #!csharp
 
-Rectangle rect = new() { X=0, Y=0, Width=200, Height=100};
+Rectangle rect = new() { X=0, Y=0, Width=200, Height=50};
 
 // This is the default appearance of a rectangle
 rect
