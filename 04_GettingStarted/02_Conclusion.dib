@@ -1,0 +1,36 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+## Matt Eland | [@IntegerMan](https://twitter.com/IntegerMan)
+Code for this talk available at [https://GitHub.com/IntegerMan/PolyglotNotebookTalk](https://GitHub.com/IntegerMan/PolyglotNotebookTalk)
+
+![QR Code](../images/QR.png)
+
+#!markdown
+
+#### [Polyglot Notebooks documentation](https://github.com/dotnet/interactive/blob/main/docs)
+
+The team is still building out the [documentation](https://github.com/dotnet/interactive/blob/main/docs), but it does help on some of the architecture.
+
+#!markdown
+
+#### [AccessibleAI.dev](https://AccessibleAI.dev) - My Data Science Blog
+
+Anything new on the data science aspects of Polyglot Notebooks generally goes here.
+
+#!markdown
+
+#### [NewDevsGuide.com](https://NewDevsGuide.com) - My Software Engineering Blog
+
+A lot of content around **Mermaid diagrams** in particular but general content on Polyglot too.
+
+#!markdown
+
+#### [MattOnDataScience.com](https://MattOnDataScience.com) - My YouTube Channel
+
+If you're looking for recorded video content on topics like this.
+
+This talk will eventually exist as a series of videos on that channel.
