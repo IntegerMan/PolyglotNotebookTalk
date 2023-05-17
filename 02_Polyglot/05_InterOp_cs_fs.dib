@@ -84,3 +84,45 @@ bilboCS
 #!csharp
 
 bilboCS.GetType()
+
+#!csharp
+
+int year = 2023;
+
+#!fsharp
+
+let month = "May"
+
+#!fsharp
+
+#!set --value @csharp:year --name year
+
+#!csharp
+
+public class Point
+{
+    public decimal X {get; init;}
+    public decimal Y {get; init;}
+
+    public override string ToString() => $"Point({X}, {Y})";
+}
+
+Point p = new() { X=4, Y=2};
+p
+
+#!fsharp
+
+#!set --value @csharp:p --name p
+
+p
+
+#!fsharp
+
+p.GetType()
+
+#!fsharp
+
+let x = p.RootElement.GetProperty("X").GetInt32()
+let y = p.RootElement.GetProperty("Y").GetInt32()
+
+x, y

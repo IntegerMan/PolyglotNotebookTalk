@@ -1,0 +1,71 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!csharp
+
+int numItems = 15000;
+
+#!csharp
+
+#!time
+
+Console.WriteLine(numItems);
+
+#!csharp
+
+void delay(int amount) {
+    for (int i = 0; i < amount; i++) {
+        // do Nothing
+    }
+}
+
+#!csharp
+
+#!time
+
+for (int i = 0; i < numItems; i++) 
+{
+    delay(250);
+}
+
+#!csharp
+
+#!time
+
+for (int i = 0; i < numItems; i++) 
+{
+    for (int j = 0; j < numItems; j++) 
+    {
+        delay(25);
+    }
+}
+
+#!csharp
+
+#!time
+
+for (int i = 1; i <= numItems; i *= 2)
+{
+    delay(250);
+}
+
+#!csharp
+
+using System;
+using System.Collections.Generic;
+
+Random rand = new();
+
+// Add a series of random doubles to a list of numbers
+List<double> numbers = new();
+for (int i = 0; i < numItems; i++) 
+{
+    numbers.Add(rand.Next());
+}
+
+#!csharp
+
+#!time
+
+numbers.Sort();
