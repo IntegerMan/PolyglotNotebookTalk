@@ -25,12 +25,6 @@ public class Point
 Point p = new() { X = 4, Y = 2};
 p
 
-#!csharp
-
-// Just to test that the Scale method works:
-Point p2 = p.Scale(1.5m);
-p2
-
 #!markdown
 
 Next we'll share the C# variable with F# via the `#!set` command.

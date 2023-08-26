@@ -5,25 +5,12 @@
 #!markdown
 
 ## Powershell Support
-Powershell has full support for variable sharing and all of the standard Polyglot goodness. Here's using Powershell to talk to the Star Wars API
-
-#!pwsh
-
-$URL = "https://swapi.dev/api/planets/2"
-$METHOD = "GET"
-
-$RESPONSE = Invoke-RestMethod -Uri $URL -Method $METHOD
-
-$RESPONSE
-
-#!markdown
-
-Internet connection have you down? The local API is here to help.
+Powershell has full support for variable sharing and all of the standard Polyglot goodness. Here's using Powershell to talk to a locally running identification server.
 
 #!pwsh
 
 $URL = "https://localhost:7041/iam"
-$METHOD = "DELETE"
+$METHOD = "GET"
 
 $RESPONSE = Invoke-RestMethod -Uri $URL -Method $METHOD
 
