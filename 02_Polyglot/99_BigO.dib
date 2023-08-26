@@ -4,7 +4,7 @@
 
 #!csharp
 
-int numItems = 15000;
+int numItems = 2000;
 
 #!csharp
 
@@ -37,7 +37,7 @@ for (int i = 0; i < numItems; i++)
 {
     for (int j = 0; j < numItems; j++) 
     {
-        delay(25);
+        delay(1);
     }
 }
 
@@ -47,7 +47,7 @@ for (int i = 0; i < numItems; i++)
 
 for (int i = 1; i <= numItems; i *= 2)
 {
-    delay(250);
+    delay(250000);
 }
 
 #!csharp
